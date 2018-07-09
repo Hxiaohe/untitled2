@@ -4,17 +4,15 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    carlist: [
-
-    ]
+    carlist: [],
+    haha: '11'
 
   },
   mutations: {
     writecarlist (state, payload) {
-      state.carlist = payload
+      state.carlist = payload.data
     },
     deletecarlist (state) {
-      state.carlist = null
     }
   }
 })
