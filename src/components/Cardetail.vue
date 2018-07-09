@@ -4,8 +4,8 @@
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <p id="brand" class="text-left col-xs-6 col-sm-6">宝马X3</p><p id="price" class="text-right col-xs-6 col-sm-6" >
-      <a href="#" style="color: crimson">$50.00W</a></p></div>
+      <p id="brand" class="text-left col-xs-6 col-sm-6">{{this.$store.state.carlist[GetQueryString()]['carKind']}}</p><p id="price" class="text-right col-xs-6 col-sm-6" >
+      <a href="#" style="color: crimson">${{this.$store.state.carlist[GetQueryString()]['price']}}W</a></p></div>
   </div>
   <p >车辆详情</p>
   <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation"  style="color: darkblue">
@@ -21,7 +21,13 @@
 </template>
 <script>
 export default {
-  name: 'cardetail'
+  name: 'cardetail',
+  methods: {
+    GetQueryString: function () {
+      var r = this.$route.fullPath.split('=')[1]
+      if (r != null) return parseInt(r); return null
+    }
+  }
 }
 </script>
 

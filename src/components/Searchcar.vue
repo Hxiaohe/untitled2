@@ -134,17 +134,20 @@ export default {name: 'searchcar',
       //   }
       // })
       $.ajax({
-        // url: 'http://localhost:8080/api/car/search?brand=' + $('#brand').val() + '&grade=' + $('#grade').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val() +
-        // '&struct=' + $('#struct').val() + '&gearbox=' + $('#gearbox').val(),
-        url: 'http://localhost:8080/api/car/search?brand=' + $('#brand').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val(),
+        url: 'http://localhost:8080/api/car/search?brand=' + $('#brand').val() + '&grade=' + $('#grade').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val() +
+        '&struct=' + $('#struct').val() + '&gearbox=' + $('#gearbox').val(),
+        // url: 'http://localhost:8080/api/car/search?brand=' + $('#brand').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val(),
         type: 'GET',
         header: 'http://localhost:8081',
         data: {
         },
         success: function (data) {
+          for (var i = 0; i < data.length; i++) {
+            data[i].url = '#/cardetail?index=' + i
+          }
           store.commit('writecarlist', {data: data})
           window.location.href = '#/carlist'
-          // alert(data[0]['brand'] + data[0]['price'] + data[0]['carKind'])
+          // alert(data[0]['url'] + data[0]['price'] + data[0]['carKind'])
           // alert('http://localhost:8080/api/car/search?brand=' + $('#brand').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val())
         }
       })

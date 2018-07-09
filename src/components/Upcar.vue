@@ -1,6 +1,6 @@
 <template>
     <div class="upcar"><div class="container">
-      <form class="form-horizontal" role="form" action="upcar success.html">
+      <form class="form-horizontal" role="form" action="">
 
         <div class="form-group">
           <label for="brand" class="col-xs-3 control-label text-center" style="padding-top: 8px">品牌</label>
@@ -10,9 +10,9 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="Type" class="col-xs-3 control-label text-center" style="padding-top: 8px">车辆类型</label>
+          <label for="carKind" class="col-xs-3 control-label text-center" style="padding-top: 8px">车辆类型</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" id="Type"
+            <input type="text" class="form-control" id="carKind"
                    placeholder="单行输入">
           </div>
         </div>
@@ -24,16 +24,16 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="number" class="col-xs-3 control-label text-center" style="padding-top: 8px">库存</label>
+          <label for="inventory" class="col-xs-3 control-label text-center" style="padding-top: 8px">库存</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" id="number"
+            <input type="text" class="form-control" id="inventory"
                    placeholder="单行输入">
           </div>
         </div>
         <div class="form-group">
-          <label for="imageurl" class="col-xs-3 control-label text-center" style="padding-top: 8px">选择图片</label>
+          <label for="carImageUrl" class="col-xs-3 control-label text-center" style="padding-top: 8px">选择图片</label>
           <div class="col-xs-8">
-            <input type="file" id="imageurl" >
+            <input type="file" id="carImageUrl" >
           </div>
         </div>
         <div class="form-group">
@@ -44,9 +44,9 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="maxpower" class="col-xs-3 control-label text-center" style="padding-top: 8px">最大功率</label>
+          <label for="maxPower" class="col-xs-3 control-label text-center" style="padding-top: 8px">最大功率</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" id="maxpower"
+            <input type="text" class="form-control" id="maxPower"
                    placeholder="单行输入">
           </div>
         </div>
@@ -65,9 +65,9 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="lwh" class="col-xs-3 control-label text-center" style="padding-top: 8px">长宽高</label>
+          <label for="size" class="col-xs-3 control-label text-center" style="padding-top: 8px">长宽高</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" id="lwh"
+            <input type="text" class="form-control" id="size"
                    placeholder="单行输入">
           </div>
         </div>
@@ -79,9 +79,9 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="highestspeed" class="col-xs-3 control-label text-center" style="padding-top: 8px">最大车速</label>
+          <label for="highestSpeed" class="col-xs-3 control-label text-center" style="padding-top: 8px">最大车速</label>
           <div class="col-xs-8">
-            <input type="text" class="form-control" id="highestspeed"
+            <input type="text" class="form-control" id="highestSpeed"
                    placeholder="单行输入">
           </div>
         </div>
@@ -94,15 +94,35 @@
         </div>
         <div class="form-group">
           <div class="col-xs-offset-1 col-xs-10">
-            <button type="submit" class="btn btn-default" Style="color:white ;background-color: darkorange">确定上新</button>
+            <button type="submit" class="btn btn-default" Style="color:white ;background-color: darkorange" v-on:click="upcar">确定上新</button>
           </div>
         </div></form>
     </div></div>
 </template>
 
 <script>
+// import store from '../store'
+var $ = require('jquery')
 export default {
-  name: 'Upcar'
+  name: 'upcar',
+  methods: {
+    upcar: function () {
+      $.ajax({
+        url: 'http://localhost:8080/api/car/new?brand=' + $('#brand').val() + '&carKind=' + $('#carKind').val() + '&sellerProfileId=' + 2 +
+        '&price=' + $('#price').val() + '&inventory=' + $('#inventory').val() +
+        '&grade=' + $('#grade').val() + '&maxPower=' + $('#maxPower').val() + '&engine=' + $('#engine').val() + '&gearbox=' + $('#gearbox').val() +
+        '&size=' + $('#size').val() + '&struct=' + $('#struct').val() + '&highestSpeed=' + $('#highestSpeed').val() + '&warranty=' + $('#warranty').val(),
+        type: 'PUT',
+        header: 'http://localhost:8081',
+        data: {
+          'carImageUrl': $('#carImageUrl').val()
+        },
+        success: function (data) {
+          if (data['message'] === 'ok') { window.location.href = '#/upcarsuccess' } else { alert('上架失败') }
+        }
+      })
+    }
+  }
 }
 </script>
 
