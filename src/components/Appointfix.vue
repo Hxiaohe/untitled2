@@ -11,9 +11,7 @@
         <div class="form-group">
           <label for="sellerId" class="col-xs-3 control-label text-center" >选择店铺</label>
           <select class="form-control" id="sellerId">
-            <option value="16">广州奥迪4s直营店</option>
-            <option value="17">北京奔驰4s直营店</option>
-            <option value="18">上海宝马4s直营店</option>
+            <option v-for="(shop,index) in this.$store.state.shoplist" :key="index" v-bind:value="shop['id']">{{shop['storeName']}}</option>
           </select>
         </div>
         <br>
@@ -47,9 +45,30 @@
 </template>
 
 <script>
+import store from '../store'
 var $ = require('jquery')
 export default {
   name: 'Appointfix',
+  data () {
+    return {
+    }
+  },
+  computed: {
+  },
+  created () {
+    store.commit('writetoken', {data: this.GetQueryString()})
+    $.ajax({
+      url: 'http://localhost:8080/user/profiles',
+      type: 'GET',
+      header: 'http://localhost:8081',
+      headers: {
+        'Authorization': store.state.token
+      },
+      success: function (data) {
+        store.commit('writeshoplist', {data: data})
+      }
+    })
+  },
   methods: {
     appointfix: function () {
       $.ajax({
@@ -57,7 +76,7 @@ export default {
         type: 'POST',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '7'
+          'Authorization': store.state.token
         },
         data: {
           'sellerId': $('#sellerId').val(),
@@ -69,6 +88,10 @@ export default {
           alert('恭喜你，预约成功！服务人员会尽快跟你联系请保持电话畅通。')
         }
       })
+    },
+    GetQueryString: function () {
+      var r = this.$route.fullPath.split('=')[1]
+      if (r != null) return parseInt(r); return null
     }
   }
 }

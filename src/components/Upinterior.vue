@@ -41,21 +41,21 @@
   <br>
   <br>
   <div class="form-group">
-    <label for="specification" class="col-xs-3 control-label text-center">规格 &nbsp;</label>
-    <input type="text" class="form-control" id="specification">
+    <label for="size" class="col-xs-3 control-label text-center">规格 &nbsp;</label>
+    <input type="text" class="form-control" id="size">
   </div>
   <br>
   <br>
   <div class="form-group">
-    <label for="texture" class="col-xs-3 control-label text-center">材质 &nbsp;</label>
-    <input type="text" class="form-control" id="texture">
+    <label for="material" class="col-xs-3 control-label text-center">材质 &nbsp;</label>
+    <input type="text" class="form-control" id="material">
   </div>
 
   <br>
   <br>
   <br>
   <div class="form-group" id="button">
-    <button type="submit" class="btn btn-default" v-on:click="upinterior">确定上新</button>
+    <button type="submit" class="btn btn-default" v-on:click.prevent="upinterior">确定上新</button>
     <br>
     <br>
   </div></form>
@@ -75,18 +75,20 @@ export default {
         type: 'POST',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '8'
+          'Authorization': store.state.token
         },
         data: {
           'amount': $('#amount').val(),
           'interiorImageUrl': $('#interiorImageUrl').val(),
+          'brand': $('#brand').val(),
           'name': $('#name').val(),
           'price': $('#price').val(),
-          'sellerProfiledId': '18'
+          'type': $('#type').val(),
+          'size': $('#size').val(),
+          'material': $('#material').val()
         },
         success: function (data) {
           store.commit('addtointeriorlist', {data: data})
-          alert(data['price'])
           if (data['message'] === 'ok') { window.location.href = '#/upinteriorsuccess' } else { alert('上架失败') }
         }
       })

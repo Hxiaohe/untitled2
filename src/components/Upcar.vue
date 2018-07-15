@@ -72,7 +72,7 @@
       <br>
       <br>
       <div class="form-group" id="button">
-        <button type="submit" class="btn btn-default"  v-on:click="upcar">确定上新</button>
+        <button type="submit" class="btn btn-default"  v-on:click.prevent="upcar">确定上新</button>
         <br>
         <br>
       </div></form>
@@ -95,11 +95,10 @@ export default {
         type: 'POST',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '8'
+          'Authorization': store.state.token
         },
         data: {
-          'carImageUrl': $('#carImageUrl').val(),
-          'sellerId': '18'
+          'carImageUrl': $('#carImageUrl').val()
         },
         success: function (data) {
           store.commit('addtocarlist', {data: data})

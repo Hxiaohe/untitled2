@@ -6,6 +6,7 @@ const store = new Vuex.Store({
   state: {
     carlist: [],
     interiorlist: [],
+    shoplist: [],
     user: {},
     token: 0
   },
@@ -27,6 +28,9 @@ const store = new Vuex.Store({
     },
     writeuser (state, payload) {
       state.user = payload.data
+    },
+    writeshoplist (state, payload) {
+      state.shoplist = payload.data
     }
   }
 })

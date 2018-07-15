@@ -16,7 +16,7 @@
         <caption style="font-size: 20px;margin-bottom: 5px">商品详情</caption>
         <tbody>
         <tr>
-          <td>品牌:</td>
+          <td>品牌:{{this.$store.state.interiorlist[GetQueryString()]['brand']}}</td>
 
         </tr>
         <tr>
@@ -28,15 +28,15 @@
 
         </tr>
         <tr>
-          <td>类型</td>
+          <td>类型:{{this.$store.state.interiorlist[GetQueryString()]['type']}}</td>
 
         </tr>
         <tr>
-          <td>规格</td>
+          <td>规格:{{this.$store.state.interiorlist[GetQueryString()]['size']}}</td>
 
         </tr>
         <tr>
-          <td>材质</td>
+          <td>材质:{{this.$store.state.interiorlist[GetQueryString()]['material']}}</td>
 
         </tr>
 
