@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import HelloWorld from '@/components/HelloWorld'
 import Index from '@/components/Index'
 import Sellercenter from '@/components/Sellercenter'
 import Buyercenter from '@/components/Buyercenter'
@@ -25,6 +24,9 @@ import Upinteriorsuccess from '@/components/Upinteriorsuccess'
 import Allorder from '@/components/Allorder'
 import Shoplist from '@/components/Shoplist'
 import Shopindex from '@/components/Shopindex'
+import Orderhandle from '@/components/Orderhandle'
+import Payresult from '@/components/Payresult'
+import Interiorlist from '@/components/Interiorlist'
 // import Shoppingcart from '@/components/Shoppingcart'
 Vue.use(Router)
 
@@ -149,6 +151,21 @@ export default new Router({
       path: '/shopindex',
       name: 'Shopindex',
       component: Shopindex
+    },
+    {
+      path: '/orderhandle',
+      name: 'Orderhandle',
+      component: Orderhandle
+    },
+    {
+      path: '/payresult',
+      name: 'Payresult',
+      component: Payresult
+    },
+    {
+      path: '/interiorlist',
+      name: 'Interiorlist',
+      component: Interiorlist
     }
     // },
     // {

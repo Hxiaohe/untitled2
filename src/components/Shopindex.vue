@@ -8,9 +8,9 @@
   <br>
   <br>
   <br>
-  <h3>广州奥迪4s旗舰店</h3>
+  <h3>{{this.$store.state.shoplist[GetQueryString()]['storeName']}}</h3>
   <div class="label" >
-    <label id="num">40000</label><label>粉丝</label></div>
+    <label id="num">856</label><label>粉丝</label></div>
 </div>
 
   <ul id="myTab" class="nav nav-tabs">
@@ -25,60 +25,14 @@
   <div id="section1">
     <div class="grid" id="grid">
       <div class="grid-sizer"></div>
-      <div class="element-item merchandise col-xs-6">
+      <div class="element-item exchange col-xs-6" v-for="(shopcar,index) in this.$store.state.carlist" :key="index">
         <div class="thumbnail">
-          <a href="commodity-info.html" class="noselect">
+          <a v-bind:href="shopcar['url']" class="noselect">
             <img src="http://placehold.it/220x220">
           </a>
           <div class="caption">
-            <h4 class="pull-right">$价格</h4>
-            <h4>产品名称</h4><br>
-          </div>
-        </div>
-      </div>
-      <div class="element-item merchandise col-xs-6">
-        <div class="thumbnail">
-          <a href="commodity-info.html" class="noselect">
-            <img src="http://placehold.it/220x220">
-          </a>
-          <div class="caption">
-            <h4 class="pull-right">$价格</h4>
-            <h4>产品名称</h4>
-          </div>
-        </div>
-      </div>
-      <div class="element-item exchange col-xs-6">
-        <div class="thumbnail">
-          <a href="commodity-info.html" class="noselect">
-            <img src="http://placehold.it/220x220">
-          </a>
-          <div class="caption">
-            <h4 class="pull-right">$价格</h4>
-            <h4>产品名称</h4>
-
-          </div>
-        </div>
-      </div>
-      <div class="element-item bonus col-xs-6">
-        <div class="thumbnail">
-          <a href="commodity-info.html" class="noselect">
-            <img src="http://placehold.it/220x220">
-          </a>
-          <div class="caption">
-            <h4 class="pull-right">$价格</h4>
-            <h4>产品名称</h4>
-
-          </div>
-        </div>
-      </div>
-      <div class="element-item exchange col-xs-6">
-        <div class="thumbnail">
-          <a href="commodity-info.html" class="noselect">
-            <img src="http://placehold.it/220x220">
-          </a>
-          <div class="caption">
-            <h4 class="pull-right">$价格</h4>
-            <h4>产品名称</h4>
+            <h4 class="pull-right">${{shopcar['price']}}</h4>
+            <h4>{{shopcar['category']}}</h4>
           </div>
         </div>
       </div>
@@ -98,8 +52,44 @@
 </template>
 
 <script>
+import store from '../store'
+var $ = require('jquery')
 export default {
-  name: 'Shopindex'
+  name: 'Shopindex',
+  data () {
+    return {
+    }
+  },
+  computed: {
+  },
+  created () {
+    this.Getshopcarlist()
+  },
+  methods: {
+    Getshopcarlist: function () {
+      $.ajax({
+        url: 'http://localhost:8080/car/shelf',
+        type: 'GET',
+        header: 'http://localhost:8081',
+        headers: {
+          'Authorization': store.state.token
+        },
+        data: {
+          sellerId: store.state.shoplist[this.GetQueryString()]['id']
+        },
+        success: function (data) {
+          for (var i = 0; i < data.length; i++) {
+            data[i].url = '#/cardetail?index=' + i
+          }
+          store.commit('writecarlist', {data: data})
+        }
+      })
+    },
+    GetQueryString: function () {
+      var r = this.$route.fullPath.split('=')[1]
+      if (r != null) return parseInt(r); return null
+    }
+  }
 }
 </script>
 

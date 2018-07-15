@@ -1,0 +1,10 @@
+html,body{width: 100%;height: 100%;background-image:url(/static/img/bg.jpg);
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-size: cover;}
+
+#box .container .diqi{width: 100%;height: 8%;position: fixed;left: 0px;bottom: 0px;background: #FB462E;}
+#box .container .diqi span{width: 25%;height: 8%;margin: 0 auto; display: block;line-height: 3.2rem;color: white;font-size: 18px;}
+img{
+    width: 100%;height: 100%;display: block;
+}
