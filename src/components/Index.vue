@@ -6,7 +6,7 @@
       <p class="text-center"  style="margin-left:25%">注：用户类型不可更改，请谨慎选择。</p>
       <form class="info" role="form" action="">
         <div class="form-group" id="button">
-          <button type="submit" class="btn btn-default" v-on:click="sellerCenter" Style="color:white ;background-color: darkorange">
+          <button type="submit" class="btn btn-default" v-on:click.prevent="sellerCenter" Style="color:white ;background-color: darkorange">
             我要成为卖家</button>
           <br>
           <br>
@@ -17,7 +17,7 @@
       <br>
       <form class="info" role="form" action="">
         <div class="form-group" id="button2">
-          <button type="submit" class="btn btn-default" v-on:click="buyerCenter" Style="color:white ;background-color: darkorange">
+          <button type="submit" class="btn btn-default" v-on:click.prevent="buyerCenter" Style="color:white ;background-color: darkorange">
             我要成为买家</button>
           <br>
           <br>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-// import store from '../store'
+import store from '../store'
 var $ = require('jquery')
 export default {
   name: 'Index',
@@ -50,8 +50,8 @@ export default {
           'Authorization': $('#token').val()
         },
         success: function () {
-          // store.commit('writetoken', {data: $('#token').val()})
-          alert('成功！')
+          store.commit('writetoken', {data: $('#token').val()})
+          alert('成功！' + this.$store.state.token)
           window.location.href = '#/sellercenter'
         }
       })
@@ -65,8 +65,8 @@ export default {
           'Authorization': $('#token').val()
         },
         success: function () {
-          // store.commit('writetoken', {data: $('#token').val()})
-          alert('成功！')
+          store.commit('writetoken', {data: $('#token').val()})
+          alert('成功！' + this.$store.state.token)
           window.location.href = '#/buyercenter'
         }
       })
