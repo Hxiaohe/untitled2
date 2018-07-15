@@ -16,7 +16,7 @@
 
   <form class="info" role="form" action="">
     <div class="form-group" id="button">
-      <button type="submit" class="btn btn-default">确 &nbsp; &nbsp; &nbsp;认</button>
+      <button type="submit" class="btn btn-default" v-on:click.prevent="tobuyercenter">确 &nbsp; &nbsp; &nbsp;认</button>
       <br>
       <br>
     </div>
@@ -29,7 +29,12 @@
 
 <script>
 export default {
-  name: 'Submitresult'
+  name: 'Submitresult',
+  methods: {
+    tobuyercenter: function () {
+      window.location.href = '#/buyercenter'
+    }
+  }
 }
 </script>
 

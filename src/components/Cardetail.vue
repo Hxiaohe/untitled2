@@ -62,7 +62,7 @@
       <div>
         <ul class="nav nav-pills">
           <li><a href="#" ><span class="glyphicon glyphicon-headphones"></span>客服</a></li>
-          <li><a href="/#/appointcar?index=0" >预约试车</a></li>
+          <li><a href="#/appointcar?index=0"  >预约试车</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>加入购物车</a></li>
           <li><a href="#">立即购买</a></li>
         </ul>

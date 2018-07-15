@@ -54,8 +54,6 @@
 
     </div>
     <div class="tab-pane fade" id="inprice">
-
-
       <div v-for="(interior,index) in this.$store.state.interiorlist" :key="index">
         <div class="panel-body" style="padding: 4px 7px;margin-top: 10px">
           <div class="media">

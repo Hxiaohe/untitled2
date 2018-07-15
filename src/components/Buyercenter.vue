@@ -41,7 +41,7 @@
               <span>客服中心</span>
               <span class="glyphicon glyphicon-chevron-right pull-right"></span>
             </a>
-            <a class="list-group-item">
+            <a class="list-group-item" href="#/feedback">
               <span>意见反馈</span>
               <span class="glyphicon glyphicon-chevron-right pull-right"></span>
             </a>

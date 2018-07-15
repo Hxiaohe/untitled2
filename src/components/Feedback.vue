@@ -31,7 +31,7 @@
       <br>
       <br>
       <div class="form-group" id="button">
-        <button type="submit" class="btn btn-default">确定提交</button>
+        <button type="submit" class="btn btn-default" v-on:click.prevent="feedback">确定提交</button>
         <br>
         <br>
       </div></form>
@@ -41,7 +41,21 @@
 
 <script>
 export default {
-  name: 'feedback'
+  name: 'feedback',
+  data () {
+    return {
+    }
+  },
+  computed: {
+  },
+  created () {
+  },
+  methods: {
+    feedback: function () {
+      alert('已成功反馈，感谢你的宝贵意见！')
+      window.location.href = '#/buyercenter'
+    }
+  }
 }
 </script>
 

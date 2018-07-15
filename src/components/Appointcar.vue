@@ -10,7 +10,7 @@
     <div class="panel panel-default" style="height: 7vh; margin-bottom: 0px; background-color: rgba(240,248,255,0.43)">
       <div class="panel-body">
         <p id="brand" class="text-left col-xs-6 col-sm-6">{{this.$store.state.carlist[GetQueryString()]['category']}}</p><p id="price" class="text-right col-xs-6 col-sm-6" >
-        <a href="#" style="color: crimson">${{this.$store.state.carlist[GetQueryString()]['price']}}W</a></p></div>
+        <a href="#" style="color: crimson">${{this.$store.state.carlist[GetQueryString()]['price']}}</a></p></div>
     </div>
     <br>
     <p style="width: 329px;margin-left:10%;">请填写以下信息申请预约试驾，该4S店会有专门的服务人员与您联系。
@@ -65,7 +65,7 @@
     </div>
     <br>
       <div class="form-group" id="button">
-        <button type="submit" class="btn btn-default">申请试驾</button>
+        <button type="submit" class="btn btn-default" v-on:click.prevent="appointcar">申请试驾</button>
         <br>
         <br>
       </div>
@@ -74,7 +74,7 @@
       <div>
         <ul class="nav nav-pills">
           <li><a href="#" ><span class="glyphicon glyphicon-headphones"></span>客服</a></li>
-          <li><a href="#" >预约试车</a></li>
+          <li><a href="/#/appointcar?index=0">预约试车</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>加入购物车</a></li>
           <li><a href="#">立即购买</a></li>
         </ul>
@@ -99,14 +99,14 @@ export default {
         type: 'POST',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '7'
+          'Authorization': store.state.token
         },
         data: {
-          'buyerId': '18'
+          'message': $('#name').val() + $('#Tel').val() + $('#Date').val(),
+          'carId': this.$store.state.carlist[0]['carId']
         },
         success: function (data) {
-          store.commit('addtocarlist', {data: data})
-          if (data['message'] === 'ok') { window.location.href = '#/upcarsuccess' } else { alert('上架失败') }
+          window.location.href = '#/submitresult'
         }
       })
     }
