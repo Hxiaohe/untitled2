@@ -1,0 +1,108 @@
+<template>
+<div class="shopindex">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/static/CSS/youlike.css">
+  <link rel="stylesheet" href="/static/CSS/shopindex.css"><div class="head">
+  <br>
+  <br>
+  <br>
+  <h3>广州奥迪4s旗舰店</h3>
+  <div class="label" >
+    <label id="num">40000</label><label>粉丝</label></div>
+</div>
+
+  <ul id="myTab" class="nav nav-tabs">
+    <li class="col-xs-4 active "><a href="#attention" data-toggle="tab">
+      关注高</a>
+    </li>
+    <li class="col-xs-4"><a href="#sales" data-toggle="tab">销售高</a></li>
+    <li class="col-xs-4">
+      <a href="#inprice" data-toggle="tab">价格</a>
+    </li></ul>
+
+  <div id="section1">
+    <div class="grid" id="grid">
+      <div class="grid-sizer"></div>
+      <div class="element-item merchandise col-xs-6">
+        <div class="thumbnail">
+          <a href="commodity-info.html" class="noselect">
+            <img src="http://placehold.it/220x220">
+          </a>
+          <div class="caption">
+            <h4 class="pull-right">$价格</h4>
+            <h4>产品名称</h4><br>
+          </div>
+        </div>
+      </div>
+      <div class="element-item merchandise col-xs-6">
+        <div class="thumbnail">
+          <a href="commodity-info.html" class="noselect">
+            <img src="http://placehold.it/220x220">
+          </a>
+          <div class="caption">
+            <h4 class="pull-right">$价格</h4>
+            <h4>产品名称</h4>
+          </div>
+        </div>
+      </div>
+      <div class="element-item exchange col-xs-6">
+        <div class="thumbnail">
+          <a href="commodity-info.html" class="noselect">
+            <img src="http://placehold.it/220x220">
+          </a>
+          <div class="caption">
+            <h4 class="pull-right">$价格</h4>
+            <h4>产品名称</h4>
+
+          </div>
+        </div>
+      </div>
+      <div class="element-item bonus col-xs-6">
+        <div class="thumbnail">
+          <a href="commodity-info.html" class="noselect">
+            <img src="http://placehold.it/220x220">
+          </a>
+          <div class="caption">
+            <h4 class="pull-right">$价格</h4>
+            <h4>产品名称</h4>
+
+          </div>
+        </div>
+      </div>
+      <div class="element-item exchange col-xs-6">
+        <div class="thumbnail">
+          <a href="commodity-info.html" class="noselect">
+            <img src="http://placehold.it/220x220">
+          </a>
+          <div class="caption">
+            <h4 class="pull-right">$价格</h4>
+            <h4>产品名称</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" >
+    <div>
+      <ul class="nav nav-pills">
+        <li id="buttom"><a href="#">&nbsp;分&nbsp;类&nbsp;</a></li>
+        <li id="buttom1"><a href="#" >关注店铺</a></li>
+        <li id="buttom2"><a href="#" ><span class="glyphicon glyphicon-headphones"></span>客服</a></li>
+
+      </ul>
+    </div></nav>
+</div>
+</template>
+
+<script>
+export default {
+  name: 'Shopindex'
+}
+</script>
+
+<style scoped>
+
+</style>

@@ -1,101 +1,98 @@
 <template>
   <div class="searchcar">
-  快速找车
-  <div class="panel panel-default">
-    <div class="panel-body">
-      <div>
-        <form method="get" action="">
-        <div class="col-xs-3"><button type="submit" class="btn btn-default" style="width: 80px; height: 30px">
-          <a href="#" style="text-decoration: none">5w以下</a>   </button></div>
-        </form>
-        <form action="">
-        <div class="col-xs-offset-1 col-xs-3"><button type="button" class="btn btn-default" style="width: 80px; height: 30px">
-          <a href="#" style="text-decoration: none"> 5-8w</a>   </button></div>
-        </form>
-        <form action="">
-        <div class="col-xs-offset-1 col-xs-3"> <button type="button" class="btn btn-default" style="width: 80px; height: 30px">
-          <a href="#" style="text-decoration: none"> 10-15w </a>  </button></div>
-        </form>
-      </div>
+    <link href="static/CSS/upnew.css" rel="stylesheet">
+    <br>
+    快速找车
+    <hr>
+    <br>
+    <div class="panel panel-default">
       <div class="panel-body">
+        <form method="get" action="" style="margin:0px;display:inline;">
+          <button type="button" class=" btn btn-default " id="s1" v-on:click="get5wdowm">
+            <a href="#">5w以下</a>   </button></form>
+        <form method="get" action="" style="margin:0px;display:inline;">
+          <button type="button" class="btn btn-default" id="s2" v-on:click="get5to8">
+            <a href="#"> 5-8w</a>   </button></form>
+        <form method="get" action="" style="margin:0px;display:inline;">
+          <button type="button" class="btn btn-default" id="s3" v-on:click="get10to15">10-15w</button></form>
       </div>
-      <div>
-        <form action="">
-        <div class="col-xs-3"><button type="button" class=" btn btn-default " style="width: 80px; height: 30px">
-          <a href="#" style="text-decoration: none">SUV</a>  </button></div>
+    </div>
+      <br>
+      <br>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <form method="get" action="" style="margin:0px;display:inline;">
+            <button type="button" class=" btn btn-default " id="s4" v-on:click="getSUV">
+              <a href="#">SUV</a>   </button></form>
+          <form method="get" action="" style="margin:0px;display:inline;">
+            <button type="button" class="btn btn-default" id="s5" v-on:click="getjc">
+              <a href="#"> 紧凑型</a>   </button></form>
+          <form method="get" action="" style="margin:0px;display:inline;">
+            <button type="button" class="btn btn-default" id="s6" v-on:click="getzd">
+              <a href="#"> 自动 </a>  </button></form>
+        </div>
+      </div>
+        <br>
+        <br>
+        <hr>
+        <br>
+        <br>
+        <form class="form-horizontal" role="form" action="">
+          <div class="form-group">
+            <label for="brand" class="col-xs-3 control-label text-center" style="padding-top: 8px">品牌&nbsp;&nbsp;</label>
+            <select class="form-control" id="brand">
+              <option>宝马</option>
+              <option>奔驰</option>
+              <option>劳斯莱斯</option>
+              <option>奥迪</option>
+              <option>大众</option>
+            </select>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="grade" class="col-xs-3 control-label text-center" style="padding-top: 8px">级别&nbsp;&nbsp;</label>
+            <select class="form-control" id="grade">
+              <option>小型</option>
+              <option>紧凑型</option>
+              <option>中型</option>
+              <option>跑车</option>
+              <option>SUV</option>
+            </select>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="lPrice" class="col-xs-3 control-label text-center" style="padding-top: 8px">价格下限</label>
+            <input type="text" class="form-control" id="lPrice">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="hPrice" class="col-xs-3 control-label text-center" style="padding-top: 8px">价格上限</label>
+            <input type="text" class="form-control" id="hPrice">
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="struct" class="col-xs-3 control-label text-center" style="padding-top: 8px">结构&nbsp;&nbsp;</label>
+            <select class="form-control" id="struct">
+              <option>两厢</option>
+              <option>三厢</option>
+              <option>敞篷</option>
+            </select>
+          </div>
+          <br>
+          <div class="form-group">
+            <label for="gearbox" class="col-xs-3 control-label text-center" style="padding-top: 8px">变速箱&nbsp;</label>
+            <select class="form-control" id="gearbox">
+              <option>手动</option>
+              <option>自动</option>
+              <option>无级变速</option>
+            </select>
+          </div>
+          <br>
+          <br>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default" id="button" v-on:click="getcarlist">查看结果</button>
+          </div>
         </form>
-        <form action="">
-        <div class="col-xs-offset-1 col-xs-3"><button type="button" class="btn btn-default" style="width: 80px; height: 30px">
-          <a href="#" style="text-decoration: none">紧凑型 </a>  </button></div>
-        </form>
-        <form action="">
-        <div class="col-xs-offset-1 col-xs-3"> <button type="button" class="btn btn-default" style="width: 80px; height: 30px">
-          <a href="#" style="text-decoration: none">自动</a>   </button></div>
-        </form>
-      </div></div></div>
-  <form id="mainform" class="form-horizontal" role="form" >
-    <div class="form-group">
-      <label for="brand" class="col-xs-3 control-label text-center" style="padding-top: 8px">品牌</label>
-      <div class="col-xs-8">
-        <select class="form-control" id="brand">
-          <option>宝马</option>
-          <option>奔驰</option>
-          <option>劳斯莱斯</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="grade" class="col-xs-3 control-label text-center" style="padding-top: 8px">级别</label>
-      <div class="col-xs-8">
-        <select class="form-control" id="grade">
-          <option>中型</option>
-          <option>小型</option>
-          <option>跑车</option>
-          <option>SUV</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="hPrice" class="col-xs-3 control-label text-center" style="padding-top: 8px" >价格下限</label>
-      <div class="col-xs-8">
-        <input type="text" class="form-control" id="lPrice" value="10.0"
-               placeholder="单行输入">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="lPrice" class="col-xs-3 control-label text-center" style="padding-top: 8px">价格上限</label>
-      <div class="col-xs-8">
-        <input type="text" class="form-control" id="hPrice" value="1000.0"
-               placeholder="单行输入">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="struct" class="col-xs-3 control-label text-center" style="padding-top: 8px">结构</label>
-      <div class="col-xs-8">
-        <select class="form-control" id="struct">
-          <option>两厢</option>
-          <option>三厢</option>
-          <option>敞篷车</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="gearbox" class="col-xs-3 control-label text-center" style="padding-top: 8px">变速箱</label>
-      <div class="col-xs-8">
-        <select class="form-control" id="gearbox">
-          <option>手动</option>
-          <option>自动</option>
-          <option>无级变速</option>
-          <option>3</option>
-        </select>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-xs-offset-1 col-xs-10">
-        <button id="ss" type="submit" class="btn btn-default" Style="color:white ;background-color: darkorange"  v-on:click="getcarlist"> 查看结果</button>
-      </div>
-    </div>
-  </form>
   </div>
 </template>
 
@@ -113,6 +110,120 @@ export default {name: 'searchcar',
     // this.getcarlist()
   },
   methods: {
+    get5wdowm: function () {
+      $.ajax({
+        url: 'http://localhost:8080/car/shelf?lPrice=1&hPrice=50000',
+        type: 'GET',
+        header: 'http://localhost:8081',
+        headers: {
+          'Authorization': '7'
+        },
+        data: {
+        },
+        success: function (data) {
+          for (var i = 0; i < data.length; i++) {
+            data[i].url = '#/cardetail?index=' + i
+          }
+          store.commit('writecarlist', {data: data})
+          window.location.href = '#/carlist'
+        }
+      })
+    },
+    get5to8: function () {
+      $.ajax({
+        url: 'http://localhost:8080/car/shelf?lPrice=50000&hPrice=80000',
+        type: 'GET',
+        header: 'http://localhost:8081',
+        headers: {
+          'Authorization': '7'
+        },
+        data: {
+        },
+        success: function (data) {
+          for (var i = 0; i < data.length; i++) {
+            data[i].url = '#/cardetail?index=' + i
+          }
+          store.commit('writecarlist', {data: data})
+          window.location.href = '#/carlist'
+        }
+      })
+    },
+    get10to15: function () {
+      $.ajax({
+        url: 'http://localhost:8080/car/shelf?lPrice=100000&hPrice=150000',
+        type: 'GET',
+        header: 'http://localhost:8081',
+        headers: {
+          'Authorization': '7'
+        },
+        data: {
+        },
+        success: function (data) {
+          for (var i = 0; i < data.length; i++) {
+            data[i].url = '#/cardetail?index=' + i
+          }
+          store.commit('writecarlist', {data: data})
+          window.location.href = '#/carlist'
+        }
+      })
+    },
+    getSUV: function () {
+      $.ajax({
+        url: 'http://localhost:8080/car/shelf?grade=SUV&lPrice=1&hPrice=10000000',
+        type: 'GET',
+        header: 'http://localhost:8081',
+        headers: {
+          'Authorization': '7'
+        },
+        data: {
+        },
+        success: function (data) {
+          for (var i = 0; i < data.length; i++) {
+            data[i].url = '#/cardetail?index=' + i
+          }
+          store.commit('writecarlist', {data: data})
+          window.location.href = '#/carlist'
+        }
+      })
+    },
+    getjc: function () {
+      $.ajax({
+        url: 'http://localhost:8080/car/shelf?grade=紧凑型&lPrice=1&hPrice=10000000',
+        type: 'GET',
+        header: 'http://localhost:8081',
+        headers: {
+          'Authorization': '7'
+        },
+        data: {
+        },
+        success: function (data) {
+          for (var i = 0; i < data.length; i++) {
+            data[i].url = '#/cardetail?index=' + i
+          }
+          store.commit('writecarlist', {data: data})
+          window.location.href = '#/carlist'
+        }
+      })
+    },
+    getzd: function () {
+      $.ajax({
+        url: 'http://localhost:8080/car/shelf?gearbox=自动&lPrice=1&hPrice=10000000',
+        type: 'GET',
+        header: 'http://localhost:8081',
+        headers: {
+          'Authorization': '7'
+        },
+        data: {
+        },
+        success: function (data) {
+          for (var i = 0; i < data.length; i++) {
+            data[i].url = '#/cardetail?index=' + i
+          }
+          store.commit('writecarlist', {data: data})
+          window.location.href = '#/carlist'
+        }
+      })
+    },
     getcarlist: function () {
       // 实例化XMLHttpRequest
       // var xmlhttp
@@ -134,11 +245,13 @@ export default {name: 'searchcar',
       //   }
       // })
       $.ajax({
-        url: 'http://localhost:8080/api/car/search?brand=' + $('#brand').val() + '&grade=' + $('#grade').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val() +
+        url: 'http://localhost:8080/car/shelf?brand=' + $('#brand').val() + '&grade=' + $('#grade').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val() +
         '&struct=' + $('#struct').val() + '&gearbox=' + $('#gearbox').val(),
-        // url: 'http://localhost:8080/api/car/search?brand=' + $('#brand').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val(),
         type: 'GET',
         header: 'http://localhost:8081',
+        headers: {
+          'Authorization': '7'
+        },
         data: {
         },
         success: function (data) {
@@ -147,8 +260,6 @@ export default {name: 'searchcar',
           }
           store.commit('writecarlist', {data: data})
           window.location.href = '#/carlist'
-          // alert(data[0]['url'] + data[0]['price'] + data[0]['carKind'])
-          // alert('http://localhost:8080/api/car/search?brand=' + $('#brand').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val())
         }
       })
       // 处理响应

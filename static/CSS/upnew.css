@@ -1,0 +1,112 @@
+body{
+    background-image:url(/static/img/bg.jpg);
+    background-color:#a3d5d3;
+    font-size:10px;
+    font-family:Georgia;
+    font-style:italic;
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-attachment:fixed;
+  }
+
+  label{
+    left: 23px;
+    width: 49px;
+    height: 31px;
+    line-height: 20px;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 14px;
+    text-align: center;
+    font-family: Serif;
+    padding: 10%;
+
+  }
+  [type=text]{
+    left: 200px;
+    width: 220px;
+    height: 30px;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: left;
+    border: 1px solid rgba(187, 187, 187, 1);
+  }
+
+
+  #button{
+    margin-left:35%;
+  }
+
+#s1,#s4{
+    margin-left:5%;
+  width:100px;height:40px;
+  background-color: #E8CCD5;
+}
+#s2,#s3,#s5,#s6{
+   margin-left:5%;
+  width:100px;height:40px;
+  background-color: #E8CCD5;
+}
+
+  button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: rgba(255, 152, 0, 1);
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+
+  button:hover {background-color: #3e8e41}
+
+  button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+
+a{
+  text-decoration:none;
+  color:white;
+}
+
+select{
+left: 110px;
+top: 500px;
+width: 223px;
+height: 30px;
+line-height: 20px;
+color: rgba(16, 16, 16, 1);
+border: 1px solid rgba(187, 187, 187, 1);
+background-color: rgba(255, 255, 255, 0);
+border-radius: 10px 10px 10px 10px;
+}
+#explain{
+  margin-left: 40px;
+}
+
+#mark{
+  text-align: center;
+}
+
+textarea{
+  left: 110px;
+  top: 500px;
+  width: 300px;
+  height: 100px;
+  margin-left: 45px;
+  color: rgba(16, 16, 16, 1);
+  border: 1px solid rgba(187, 187, 187, 1);
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 10px 10px 10px 10px;
+}
+
+#mark1{
+  text-align: center;
+}

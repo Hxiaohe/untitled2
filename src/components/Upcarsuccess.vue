@@ -1,19 +1,30 @@
 <template>
     <div class="upcarsuccess">
-      <h1><p class="text-center">车辆上架成功</p></h1>
+      <link rel="stylesheet" href="static/CSS/upnewresult.css">
+      <meta name="renderer" content="webkit">
+      <br>
+      <br>
 
-      <div class="form-group">
-        <div class="col-xs-offset-1 col-xs-10">
-          <h3> <button type="submit" class="btn btn-default" onclick="javascript:window.location.href='#/';" Style="color:white ;background-color: darkorange">
-            查看详情页</button></h3>
+      <img  v-bind:src="this.$store.state.carlist['carImageUrl']" alt="商品图片"/>
+
+      <p align='center' style="color: rgba(16, 16, 16, 1);font-size: 14px;font-family: Arial">商品上架成功！</p>
+      <br>
+      <form class="info" role="form" action="">
+        <div class="form-group" id="button">
+          <button type="submit" class="btn btn-default" onclick="javascript:window.location.href='#/cardetail?index=0';">查看详情</button>
+          <br>
+          <br>
         </div>
-      </div>
-      <div class="form-group">
-        <div class="col-xs-offset-1 col-xs-10">
-          <h3> <button type="submit" class="btn btn-default" onclick="javascript:window.location.href='#/sellercenter';" Style="color:white ;background-color: darkorange">
-            确定</button></h3>
-        </div>
-      </div>
+      </form>
+      <br>
+      <br>
+      <form class="return" role="form" action="">
+        <div class="form-group" id="button2">
+          <button type="submit" class="btn btn-default" onclick="javascript:window.location.href='#/sellercenter';">确定</button>
+               <br>
+               <br>
+             </div>
+    </form>
     </div>
 </template>
 

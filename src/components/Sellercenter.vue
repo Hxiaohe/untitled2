@@ -1,34 +1,63 @@
 <template>
   <div class="sellercenter">
-    <img src="../assets/haha1.jpg" class="img-responsive" alt="haha">
-    <p class="text-center">广州奥迪4s经销商</p>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p class="text-left col-xs-6 col-sm-6">全部车辆</p><p class="text-right col-xs-6 col-sm-6">
-          <a href="#">查看全部车辆></a></p></div> </div>
-    <div class="panel panel-default">
-        <div class="panel-body"><p class="text-left col-xs-6 col-sm-6">部件/零件</p><p class="text-right col-xs-6 col-sm-6">
-          <a href="#">查看全部></a></p></div>
-        <div class="panel-body"><p class="text-left col-xs-6 col-sm-6">粉丝数量</p><p class="text-right col-xs-6 col-sm-6">
-          <a href="#">9999</a></p></div>
-        <div class="panel-body"><p class="text-left col-xs-6 col-sm-6">试车申请</p><p class="text-right col-xs-6 col-sm-6">
-          <a href="#">查看全部></a></p></div>
-     </div>
-    <div class="panel panel-default">
-<div class="panel-body"><p class="text-left col-xs-6 col-sm-6">保养/维修预约信息</p><p class="text-right col-xs-6 col-sm-6">
-          <a href="#">查看全部></a></p></div>
-       <div class="panel-body"><p class="text-left col-xs-6 col-sm-6">车辆上新</p><p class="text-right col-xs-6 col-sm-6">
-          <a href="#/upcar">></a></p></div>
-        <div class="panel-body"><p class="text-left col-xs-6 col-sm-6">部件/零件上新</p><p class="text-right col-xs-6 col-sm-6">
-          <a href="#">></a></p></div>
-    <div class="panel-body"><p class="text-left col-xs-6 col-sm-6">信息验证</p><p class="text-right col-xs-6 col-sm-6">
-          <a href="#">></a></p><p style="color: gray">&nbsp;&nbsp;注：经后台人员审核通过，你才能上架商品</p></div>
-    </div>
+    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/CSS/center.css" rel="stylesheet">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="jumbotron text-center">
+            <img src="" alt="店铺图片"/>
 
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <p class="text-left col-xs-6 col-sm-6">设置</p><p class="text-right col-xs-6 col-sm-6">
-          <a href="#">账号管理></a></p></div> </div>
+          </div>
+          <p align='center' style="color:rgba(16, 16, 16, 1);font-size:14px; font-family: Arial">广州奥迪4S店</p>
+          <br>
+          <ul class="list-group">
+            <a class="list-group-item">
+              <span>全部车辆</span>
+              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+            </a>
+            <a class="list-group-item">
+              <span>待完成汽车内饰订单</span>
+              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+            </a>
+            <a class="list-group-item">
+              <span>粉丝数量</span>
+              <span class="glyphicon glyphicon-chevron-right pull-right">999</span>
+            </a>
+          </ul>
+          <br>
+          <ul class="list-group">
+            <a class="list-group-item">
+              <span>试车申请</span>
+              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+            </a>
+            <a class="list-group-item">
+              <span>保养/维修预约信息</span>
+              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+            </a>
+          </ul>
+          <br>
+          <ul class="list-group ">
+            <a class="list-group-item" href="/#/upcar">
+              <span>车辆上新</span>
+              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+            </a>
+            <a class="list-group-item"  href="/#/upinterior">
+              <span>汽车内饰上新</span>
+              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+            </a>
+          </ul>
+          <br>
+          <ul class="list-group">
+            <a class="list-group-item">
+              <span>信息验证</span>
+              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+            </a>
+            <p style="color:rgba(170, 170, 170,1);left: 16px " >注：经后台人员审核通过，您才能上架商品</p>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -45,18 +74,4 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  h1, h2 {
-    font-weight: normal;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    display: inline-block;
-    margin: 0 10px;
-  }
-  a {
-    color: #42b983;
-  }
 </style>

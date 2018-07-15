@@ -1,0 +1,10 @@
+body{
+  background-image:url(/static/img/bg.jpg);background-repeat:no-repeat;background-attachment:fixed;background-size: cover
+}
+
+.table-striped>tbody>tr:nth-of-type(odd){
+  background-color: rgba(240, 248, 255, 0.24);
+}
+.navbar{
+  min-height: 3px;
+}

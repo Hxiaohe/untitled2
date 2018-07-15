@@ -5,14 +5,24 @@ Vue.use(Vuex)
 const store = new Vuex.Store({
   state: {
     carlist: [],
-    haha: '11'
-
+    interiorlist: [],
+    token: 0
   },
   mutations: {
     writecarlist (state, payload) {
       state.carlist = payload.data
     },
-    deletecarlist (state) {
+    addtocarlist (state, payload) {
+      state.carlist[0] = payload.data
+    },
+    writeinteriorlist (state, payload) {
+      state.interiorlist = payload.data
+    },
+    addtointeriorlist (state, payload) {
+      state.interiorlist[0] = payload.data
+    },
+    wrtietoken (state, payload) {
+      state.token = payload.data
     }
   }
 })
