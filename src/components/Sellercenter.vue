@@ -9,7 +9,7 @@
             <img src="" alt="店铺图片"/>
 
           </div>
-          <p align='center' style="color:rgba(16, 16, 16, 1);font-size:14px; font-family: Arial">广州奥迪4S店</p>
+          <p align='center' style="color:rgba(16, 16, 16, 1);font-size:14px; font-family: Arial">{{this.$store.state.user['storeName']}}</p>
           <br>
           <ul class="list-group">
             <a class="list-group-item">
@@ -62,11 +62,34 @@
 </template>
 
 <script>
+import store from '../store'
+var $ = require('jquery')
 export default {
   name: 'Sellercenter',
   data () {
     return {
-      msg: '111'
+    }
+  },
+  computed: {
+  },
+  created () {
+    store.commit('writetoken', {data: this.GetQueryString()})
+    $.ajax({
+      url: 'http://localhost:8080/user/profile',
+      type: 'GET',
+      header: 'http://localhost:8081',
+      headers: {
+        'Authorization': store.state.token
+      },
+      success: function (data) {
+        store.commit('writeuser', {data: data})
+      }
+    })
+  },
+  methods: {
+    GetQueryString: function () {
+      var r = this.$route.fullPath.split('=')[1]
+      if (r != null) return parseInt(r); return null
     }
   }
 }

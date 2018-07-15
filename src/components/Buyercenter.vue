@@ -7,7 +7,7 @@
         <div class="col-xs-12">
           <div class="jumbotron text-center">
             <img src="" alt="用户头像"/>
-            <p>我的微信名</p>
+            <p>{{this.$store.state.user['phoneNumber']}}</p>
           </div>
           <br>
           <ul class="list-group">
@@ -53,8 +53,36 @@
 </template>
 
 <script>
+import store from '../store'
+var $ = require('jquery')
 export default {
-  name: 'Buyercenter'
+  name: 'Buyercenter',
+  data () {
+    return {
+    }
+  },
+  computed: {
+  },
+  created () {
+    store.commit('writetoken', {data: this.GetQueryString()})
+    $.ajax({
+      url: 'http://localhost:8080/user/profile',
+      type: 'GET',
+      header: 'http://localhost:8081',
+      headers: {
+        'Authorization': store.state.token
+      },
+      success: function (data) {
+        store.commit('writeuser', {data: data})
+      }
+    })
+  },
+  methods: {
+    GetQueryString: function () {
+      var r = this.$route.fullPath.split('=')[1]
+      if (r != null) return parseInt(r); return null
+    }
+  }
 }
 </script>
 <style scoped>

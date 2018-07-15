@@ -8,13 +8,13 @@
     <div class="panel panel-default">
       <div class="panel-body">
         <form method="get" action="" style="margin:0px;display:inline;">
-          <button type="button" class=" btn btn-default " id="s1" v-on:click="get5wdowm">
+          <button type="button" class=" btn btn-default " id="s1" v-on:click.prevent="get5wdowm">
             <a href="#">5w以下</a>   </button></form>
         <form method="get" action="" style="margin:0px;display:inline;">
-          <button type="button" class="btn btn-default" id="s2" v-on:click="get5to8">
+          <button type="button" class="btn btn-default" id="s2" v-on:click.prevent="get5to8">
             <a href="#"> 5-8w</a>   </button></form>
         <form method="get" action="" style="margin:0px;display:inline;">
-          <button type="button" class="btn btn-default" id="s3" v-on:click="get10to15">10-15w</button></form>
+          <button type="button" class="btn btn-default" id="s3" v-on:click.prevent="get10to15">10-15w</button></form>
       </div>
     </div>
       <br>
@@ -22,13 +22,13 @@
       <div class="panel panel-default">
         <div class="panel-body">
           <form method="get" action="" style="margin:0px;display:inline;">
-            <button type="button" class=" btn btn-default " id="s4" v-on:click="getSUV">
+            <button type="button" class=" btn btn-default " id="s4" v-on:click.prevent="getSUV">
               <a href="#">SUV</a>   </button></form>
           <form method="get" action="" style="margin:0px;display:inline;">
-            <button type="button" class="btn btn-default" id="s5" v-on:click="getjc">
+            <button type="button" class="btn btn-default" id="s5" v-on:click.prevent="getjc">
               <a href="#"> 紧凑型</a>   </button></form>
           <form method="get" action="" style="margin:0px;display:inline;">
-            <button type="button" class="btn btn-default" id="s6" v-on:click="getzd">
+            <button type="button" class="btn btn-default" id="s6" v-on:click.prevent="getzd">
               <a href="#"> 自动 </a>  </button></form>
         </div>
       </div>
@@ -90,7 +90,7 @@
           <br>
           <br>
           <div class="form-group">
-            <button type="submit" class="btn btn-default" id="button" v-on:click="getcarlist">查看结果</button>
+            <button type="submit" class="btn btn-default" id="button" v-on:click.prevent="getcarlist">查看结果</button>
           </div>
         </form>
   </div>
@@ -107,7 +107,7 @@ export default {name: 'searchcar',
   computed: {
   },
   created () {
-    // this.getcarlist()
+    store.commit('writetoken', {data: this.GetQueryString()})
   },
   methods: {
     get5wdowm: function () {
@@ -116,7 +116,7 @@ export default {name: 'searchcar',
         type: 'GET',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '7'
+          'Authorization': store.state.token
         },
         data: {
         },
@@ -135,7 +135,7 @@ export default {name: 'searchcar',
         type: 'GET',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '7'
+          'Authorization': store.state.token
         },
         data: {
         },
@@ -154,7 +154,7 @@ export default {name: 'searchcar',
         type: 'GET',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '7'
+          'Authorization': store.state.token
         },
         data: {
         },
@@ -173,7 +173,7 @@ export default {name: 'searchcar',
         type: 'GET',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '7'
+          'Authorization': store.state.token
         },
         data: {
         },
@@ -192,7 +192,7 @@ export default {name: 'searchcar',
         type: 'GET',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '7'
+          'Authorization': store.state.token
         },
         data: {
         },
@@ -211,7 +211,7 @@ export default {name: 'searchcar',
         type: 'GET',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '7'
+          'Authorization': store.state.token
         },
         data: {
         },
@@ -250,7 +250,7 @@ export default {name: 'searchcar',
         type: 'GET',
         header: 'http://localhost:8081',
         headers: {
-          'Authorization': '7'
+          'Authorization': store.state.token
         },
         data: {
         },
@@ -270,6 +270,10 @@ export default {name: 'searchcar',
       //     this.$store.commit('writecarlist', json)
       //   }
       // }
+    },
+    GetQueryString: function () {
+      var r = this.$route.fullPath.split('=')[1]
+      if (r != null) return parseInt(r); return null
     }
 
   }

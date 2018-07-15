@@ -6,6 +6,7 @@ const store = new Vuex.Store({
   state: {
     carlist: [],
     interiorlist: [],
+    user: {},
     token: 0
   },
   mutations: {
@@ -21,8 +22,11 @@ const store = new Vuex.Store({
     addtointeriorlist (state, payload) {
       state.interiorlist[0] = payload.data
     },
-    wrtietoken (state, payload) {
+    writetoken (state, payload) {
       state.token = payload.data
+    },
+    writeuser (state, payload) {
+      state.user = payload.data
     }
   }
 })

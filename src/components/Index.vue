@@ -51,7 +51,6 @@ export default {
         },
         success: function () {
           store.commit('writetoken', {data: $('#token').val()})
-          alert('成功！' + this.$store.state.token)
           window.location.href = '#/sellercenter'
         }
       })
@@ -66,7 +65,6 @@ export default {
         },
         success: function () {
           store.commit('writetoken', {data: $('#token').val()})
-          alert('成功！' + this.$store.state.token)
           window.location.href = '#/buyercenter'
         }
       })

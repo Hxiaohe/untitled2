@@ -31,22 +31,22 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/index',
+      path: '/index', // 成为卖家买家
       name: 'Index',
       component: Index
     },
     {
-      path: '/sellercenter',
+      path: '/sellercenter', // 卖家中心
       name: 'Sellercenter',
       component: Sellercenter
     },
     {
-      path: '/buyercenter',
+      path: '/buyercenter', // 买家中心
       name: 'Buyercenter',
       component: Buyercenter
     },
     {
-      path: '/upcar',
+      path: '/upcar', // 车辆上新
       name: 'Upcar',
       component: Upcar
     },
@@ -56,7 +56,7 @@ export default new Router({
       component: Upcarsuccess
     },
     {
-      path: '/searchcar',
+      path: '/searchcar', // 车辆筛选
       name: 'Searchcar',
       component: Searchcar
     },
@@ -81,7 +81,7 @@ export default new Router({
       component: Interiordetail
     },
     {
-      path: '/upinterior',
+      path: '/upinterior', // 内饰上新
       name: 'Upinterior',
       component: Upinterior
     },
@@ -91,7 +91,7 @@ export default new Router({
       component: Alllist
     },
     {
-      path: '/appointfix',
+      path: '/appointfix', // 包养维修
       name: 'Appointfix',
       component: Appointfix
     },
@@ -101,12 +101,12 @@ export default new Router({
       component: Feedback
     },
     {
-      path: '/fixhandle',
+      path: '/fixhandle', // 预约处理
       name: 'Fixhandle',
       component: Fixhandle
     },
     {
-      path: '/searchinterior',
+      path: '/searchinterior', // 汽车内饰
       name: 'Searchinterior',
       component: Searchinterior
     },
@@ -126,7 +126,7 @@ export default new Router({
       component: Trycarhandle
     },
     {
-      path: '/youlike',
+      path: '/youlike', // 猜你喜欢
       name: 'Youlike',
       component: Youlike
     },
