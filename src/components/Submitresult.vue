@@ -16,7 +16,7 @@
 
   <form class="info" role="form" action="">
     <div class="form-group" id="button">
-      <button type="submit" class="btn btn-default" v-on:click.prevent="tobuyercenter">确 &nbsp; &nbsp; &nbsp;认</button>
+      <button type="submit" class="btn btn-default" v-on:click.prevent="tosellercenter">确 &nbsp; &nbsp; &nbsp;认</button>
       <br>
       <br>
     </div>
@@ -33,8 +33,8 @@ import store from '../store'
 export default {
   name: 'Submitresult',
   methods: {
-    tobuyercenter: function () {
-      window.location.href = '#/buyercenter?token=' + store.state.token
+    tosellercenter: function () {
+      window.location.href = '#/sellercenter?token=' + store.state.token
     }
   }
 }

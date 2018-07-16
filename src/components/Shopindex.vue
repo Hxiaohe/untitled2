@@ -8,6 +8,9 @@
   <br>
   <br>
   <br>
+  <div class="jumbotron text-center">
+    <img v-bind:src="this.$store.state.shoplist[GetQueryString()]['userAvatarUrl']" alt="店铺图片"/>
+  </div>
   <h3>{{this.$store.state.shoplist[GetQueryString()]['storeName']}}</h3>
   <div class="label" >
     <label id="num">856</label><label>粉丝</label></div>
@@ -29,11 +32,11 @@
         <div class="thumbnail">
           <a v-bind:href="shopcar['url']" class="noselect">
             <img v-bind:src="shopcar['carImageUrl']">
-          </a>
           <div class="caption">
             <h4 class="pull-right">${{shopcar['price']}}</h4>
             <h4>{{shopcar['category']}}</h4>
           </div>
+          </a>
         </div>
       </div>
     </div>
@@ -81,6 +84,7 @@ export default {
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/cardetail?index=' + i
             data[i].appointurl = '#/appointcar?index=' + i
+            data[i].buyurl = '#/orderhandle?index=' + i
           }
           store.commit('writecarlist', {data: data})
         }

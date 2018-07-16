@@ -103,6 +103,7 @@ export default {
         success: function (data) {
           data.url = '#/cardetail?index=0'
           data.appointurl = '#/appointcar?index=0'
+          data.buyurl = '#/orderhandle?index=0'
           store.commit('addtocarlist', {data: data})
           if (data['message'] === 'ok') { window.location.href = '#/upcarsuccess' } else { alert('上架失败') }
         }

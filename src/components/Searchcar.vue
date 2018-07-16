@@ -124,6 +124,7 @@ export default {name: 'searchcar',
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/cardetail?index=' + i
             data[i].appointurl = '#/appointcar?index=' + i
+            data[i].buyurl = '#/orderhandle?index=' + i
           }
           store.commit('writecarlist', {data: data})
           window.location.href = '#/carlist'
@@ -144,6 +145,7 @@ export default {name: 'searchcar',
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/cardetail?index=' + i
             data[i].appointurl = '#/appointcar?index=' + i
+            data[i].buyurl = '#/orderhandle?index=' + i
           }
           store.commit('writecarlist', {data: data})
           window.location.href = '#/carlist'
@@ -164,6 +166,7 @@ export default {name: 'searchcar',
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/cardetail?index=' + i
             data[i].appointurl = '#/appointcar?index=' + i
+            data[i].buyurl = '#/orderhandle?index=' + i
           }
           store.commit('writecarlist', {data: data})
           window.location.href = '#/carlist'
@@ -184,6 +187,7 @@ export default {name: 'searchcar',
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/cardetail?index=' + i
             data[i].appointurl = '#/appointcar?index=' + i
+            data[i].buyurl = '#/orderhandle?index=' + i
           }
           store.commit('writecarlist', {data: data})
           window.location.href = '#/carlist'
@@ -204,6 +208,7 @@ export default {name: 'searchcar',
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/cardetail?index=' + i
             data[i].appointurl = '#/appointcar?index=' + i
+            data[i].buyurl = '#/orderhandle?index=' + i
           }
           store.commit('writecarlist', {data: data})
           window.location.href = '#/carlist'
@@ -224,6 +229,7 @@ export default {name: 'searchcar',
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/cardetail?index=' + i
             data[i].appointurl = '#/appointcar?index=' + i
+            data[i].buyurl = '#/orderhandle?index=' + i
           }
           store.commit('writecarlist', {data: data})
           window.location.href = '#/carlist'
@@ -264,6 +270,7 @@ export default {name: 'searchcar',
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/cardetail?index=' + i
             data[i].appointurl = '#/appointcar?index=' + i
+            data[i].buyurl = '#/orderhandle?index=' + i
           }
           store.commit('writecarlist', {data: data})
           window.location.href = '#/carlist'

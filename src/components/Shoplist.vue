@@ -11,11 +11,11 @@
       <div class="element-item merchandise col-xs-6" v-for="(shop,index) in this.$store.state.shoplist" :key="index">
         <div class="thumbnail">
           <a v-bind:href="shop['url']" class="noselect">
-            <img src="http://placehold.it/220x220">
-          </a>
+            <img v-bind:src="shop['userAvatarUrl']">
           <div class="caption">
             <h4 class="name">{{shop['storeName']}}</h4><br>
           </div>
+          </a>
         </div>
       </div>
     </div>

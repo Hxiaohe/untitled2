@@ -27,6 +27,8 @@ import Shopindex from '@/components/Shopindex'
 import Orderhandle from '@/components/Orderhandle'
 import Payresult from '@/components/Payresult'
 import Interiorlist from '@/components/Interiorlist'
+import Appointresult from '@/components/Appointresult'
+import Nocar from '@/components/Nocar'
 // import Shoppingcart from '@/components/Shoppingcart'
 Vue.use(Router)
 
@@ -166,6 +168,16 @@ export default new Router({
       path: '/interiorlist',
       name: 'Interiorlist',
       component: Interiorlist
+    },
+    {
+      path: '/appointresult',
+      name: 'Appointresult',
+      component: Appointresult
+    },
+    {
+      path: '/nocar',
+      name: 'Nocar',
+      component: Nocar
     }
     // },
     // {

@@ -85,7 +85,7 @@ export default {
           'date': $('#date').val()
         },
         success: function (data) {
-          alert('恭喜你，预约成功！服务人员会尽快跟你联系请保持电话畅通。')
+          window.location.href = '#/appointresult'
         }
       })
     },

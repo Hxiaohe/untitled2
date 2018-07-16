@@ -6,7 +6,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="jumbotron text-center">
-            <img src="" alt="用户头像"/>
+            <img v-bind:src="this.$store.state.user['userAvatarUrl']" alt="用户头像"/>
             <p>{{this.$store.state.user['phoneNumber']}}</p>
           </div>
           <br>

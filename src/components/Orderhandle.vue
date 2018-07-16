@@ -7,12 +7,12 @@
   <div id="box">
     <div class="container">
       <form class="form-horizontal" role="form" action="">
-        <div class="second_one"><span>店铺：<label id="shopname">广州奥迪</label></span></div>
+        <div class="second_one"><span>店铺：<label id="shopname">{{this.$store.state.carlist[GetQueryString()]['storeName']}}</label></span></div>
         <div class="second_two">
           <div class="two_one"><img src="" alt="" /></div>
-          <div class="two_two">奥迪Q6 自动挡 2.0T</div>
-          <div class="two_three">奥迪</div>
-          <div class="two_four"><span>￥</span>250000</div>
+          <div class="two_two">{{this.$store.state.carlist[GetQueryString()]['category']}} {{this.$store.state.carlist[GetQueryString()]['gearbox']}} {{this.$store.state.carlist[GetQueryString()]['engine']}}</div>
+          <div class="two_three">{{this.$store.state.carlist[GetQueryString()]['brand']}}</div>
+          <div class="two_four"><span>$</span>{{this.$store.state.carlist[GetQueryString()]['price']}}</div>
           <div class="two_five"></div>
           <div class="two_six">数量：1</div>
           <div class="two_seven"></div>
@@ -37,9 +37,9 @@
           <input type="text" class="form-control" id="address">
         </div>
           <span class="qi">实付款</span>
-          <span class="ba">￥</span>
-          <span class="jiu" id="shu3">2500000</span>
-      <div class="diqi"><span>提交订单</span></div>
+          <span class="ba">$</span>
+          <span class="jiu" id="shu3">{{this.$store.state.carlist[GetQueryString()]['price']}}</span>
+      <div class="diqi" v-on:click.prevent="buycar"><span>提交订单</span></div>
       </form>
     </div>
   </div>
@@ -47,9 +47,35 @@
 </template>
 
 <script>
-// var $ = require('jquery')
+import store from '../store'
+var $ = require('jquery')
 export default {
-  name: 'Orderhandle'
+  name: 'Orderhandle',
+  methods: {
+    GetQueryString: function () {
+      var r = this.$route.fullPath.split('=')[1]
+      if (r != null) return parseInt(r)
+      return null
+    },
+    buycar: function () {
+      $.ajax({
+        url: 'http://localhost:8080/car/order',
+        type: 'POST',
+        header: 'http://localhost:8081',
+        headers: {
+          'Authorization': store.state.token
+        },
+        data: {
+          'amount': 1,
+          'category': this.$store.state.carlist[this.GetQueryString()]['category'],
+          'sellerProfileId': this.$store.state.carlist[this.GetQueryString()]['sellerId']
+        },
+        success: function (data) {
+          window.location.href = '#/payresult'
+        }
+      })
+    }
+  }
 }
 
 </script>

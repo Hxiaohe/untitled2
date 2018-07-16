@@ -6,8 +6,7 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="jumbotron text-center">
-            <img src="" alt="店铺图片"/>
-
+            <img v-bind:src="this.$store.state.user['userAvatarUrl']" alt="店铺图片"/>
           </div>
           <p align='center' style="color:rgba(16, 16, 16, 1);font-size:14px; font-family: Arial">{{this.$store.state.user['storeName']}}</p>
           <br>
@@ -49,7 +48,7 @@
           </ul>
           <br>
           <ul class="list-group">
-            <a class="list-group-item">
+            <a class="list-group-item" href="#/shopdetail">
               <span>信息验证</span>
               <span class="glyphicon glyphicon-chevron-right pull-right"></span>
             </a>
