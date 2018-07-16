@@ -93,7 +93,7 @@ export default {
         '&grade=' + $('#grade').val() + '&maxPower=' + $('#maxPower').val() + '&engine=' + $('#engine').val() + '&gearbox=' + $('#gearbox').val() +
         '&size=' + $('#size').val() + '&struct=' + $('#struct').val() + '&highestSpeed=' + $('#highestSpeed').val() + '&warranty=' + $('#warranty').val(),
         type: 'POST',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -117,7 +117,7 @@ export default {
         url: 'http://localhost:8080/car/image',
         type: 'POST',
         cache: false,
-        header: 'http://localhost:8081',
+
         processData: false,
         contentType: false,
         data: formData,

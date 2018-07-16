@@ -39,7 +39,7 @@ export default {
     $.ajax({
       url: 'http://localhost:8080/user/profiles',
       type: 'GET',
-      header: 'http://localhost:8081',
+
       headers: {
         'Authorization': store.state.token
       },

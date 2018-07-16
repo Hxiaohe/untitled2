@@ -50,7 +50,7 @@ export default {
       $.ajax({
         url: 'http://localhost:8080/interior/search?Type=座垫',
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -67,7 +67,7 @@ export default {
       $.ajax({
         url: 'http://localhost:8080/interior/search?Type=汽车挂件',
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -84,7 +84,7 @@ export default {
       $.ajax({
         url: 'http://localhost:8080/interior/search?Type=方向盘套',
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -101,7 +101,7 @@ export default {
       $.ajax({
         url: 'http://localhost:8080/interior/search?Type=其他',
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },

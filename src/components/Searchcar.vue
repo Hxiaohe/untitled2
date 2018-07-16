@@ -114,7 +114,7 @@ export default {name: 'searchcar',
       $.ajax({
         url: 'http://localhost:8080/car/shelf?lPrice=1&hPrice=50000',
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -135,7 +135,7 @@ export default {name: 'searchcar',
       $.ajax({
         url: 'http://localhost:8080/car/shelf?lPrice=50000&hPrice=80000',
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -156,7 +156,7 @@ export default {name: 'searchcar',
       $.ajax({
         url: 'http://localhost:8080/car/shelf?lPrice=100000&hPrice=150000',
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -177,7 +177,7 @@ export default {name: 'searchcar',
       $.ajax({
         url: 'http://localhost:8080/car/shelf?grade=SUV&lPrice=1&hPrice=10000000',
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -198,7 +198,7 @@ export default {name: 'searchcar',
       $.ajax({
         url: 'http://localhost:8080/car/shelf?grade=紧凑型&lPrice=1&hPrice=10000000',
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -219,7 +219,7 @@ export default {name: 'searchcar',
       $.ajax({
         url: 'http://localhost:8080/car/shelf?gearbox=自动&lPrice=1&hPrice=10000000',
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -247,7 +247,7 @@ export default {name: 'searchcar',
       // $.ajax({
       //   type: 'GET',
       //   dataType: 'json',
-      //   header: 'http://localhost:8081',
+      //
       //   url: 'http://localhost:8080/api/car/search?brand=劳斯莱斯&lPrice=10.0&hPrice=700.0',
       //   cache: true,
       //   success: (data) => {
@@ -260,7 +260,7 @@ export default {name: 'searchcar',
         url: 'http://localhost:8080/car/shelf?brand=' + $('#brand').val() + '&grade=' + $('#grade').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val() +
         '&struct=' + $('#struct').val() + '&gearbox=' + $('#gearbox').val(),
         type: 'GET',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },

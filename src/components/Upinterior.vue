@@ -73,7 +73,7 @@ export default {
       $.ajax({
         url: 'http://localhost:8080/interior/shelf',
         type: 'POST',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -101,7 +101,7 @@ export default {
         url: 'http://localhost:8080/interior/image',
         type: 'POST',
         cache: false,
-        header: 'http://localhost:8081',
+
         processData: false,
         contentType: false,
         data: formData,

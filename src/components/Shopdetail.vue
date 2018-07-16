@@ -67,7 +67,7 @@ export default {
       $.ajax({
         url: 'http://localhost:8080/user/profile',
         type: 'POST',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': store.state.token
         },
@@ -95,7 +95,7 @@ export default {
         url: 'http://localhost:8080/user/avatar',
         type: 'POST',
         cache: false,
-        header: 'http://localhost:8081',
+
         processData: false,
         contentType: false,
         data: formData,
@@ -112,7 +112,7 @@ export default {
         url: 'http://localhost:8080/user/license',
         type: 'POST',
         cache: false,
-        header: 'http://localhost:8081',
+
         processData: false,
         contentType: false,
         data: formData,

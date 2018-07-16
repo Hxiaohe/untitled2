@@ -76,7 +76,7 @@ export default {
     $.ajax({
       url: 'http://localhost:8080/user/profile',
       type: 'GET',
-      header: 'http://localhost:8081',
+
       headers: {
         'Authorization': store.state.token
       },

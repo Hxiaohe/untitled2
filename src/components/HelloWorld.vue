@@ -43,7 +43,7 @@ export default {
       $.ajax({
         url: 'http://localhost:8080/user/type?userType=seller',
         type: 'PUT',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': 15
         },
@@ -57,7 +57,7 @@ export default {
       $.ajax({
         url: 'http://localhost:8080/user/type?userType=buyer',
         type: 'PUT',
-        header: 'http://localhost:8081',
+
         headers: {
           'Authorization': 15
         },
