@@ -3,7 +3,7 @@
       <link href="static/CSS/upnew.css" rel="stylesheet">
       <br>
       <div class="container">
-        <form class="form-horizontal" role="form" action="">
+        <form class="form-horizontal" role="form" enctype="multipart/form-data" action="">
           <div class="form-group">
             <label for="brand" class="col-xs-3 control-label text-center" >品牌 &nbsp; </label>
             <input type="text" class="form-control" id="brand">
@@ -23,10 +23,10 @@
             <label for="amount" class="col-xs-3 control-label text-center">库存 &nbsp; </label>
             <input type="text" class="form-control" id="amount">
           </div>
-          <br>
+          <br>C
           <div class="form-group">
-            <label for="carImageUrl" class="col-xs-3 control-label text-center">选择图片</label>
-            <input type="file" id="carImageUrl" >
+            <label for="carImage" class="col-xs-3 control-label text-center" >选择图片</label>
+            <input type="file" id="carImage" v-on:change="upcarimage">
           </div>
           <br>
           <div class="form-group">
@@ -98,11 +98,30 @@ export default {
           'Authorization': store.state.token
         },
         data: {
-          'carImageUrl': $('#carImageUrl').val()
+          'carImageUrl': store.state.carimage
         },
         success: function (data) {
+          data.url = '#/cardetail?index=0'
+          data.appointurl = '#/appointcar?index=0'
           store.commit('addtocarlist', {data: data})
           if (data['message'] === 'ok') { window.location.href = '#/upcarsuccess' } else { alert('上架失败') }
+        }
+      })
+    },
+    upcarimage: function () {
+      var formData = new FormData()
+      formData.append('carImage', $('#carImage')[0].files[0])
+
+      $.ajax({
+        url: 'http://localhost:8080/car/image',
+        type: 'POST',
+        cache: false,
+        header: 'http://localhost:8081',
+        processData: false,
+        contentType: false,
+        data: formData,
+        success: function (data) {
+          store.commit('writecarimage', {data: data['carImageUrl']})
         }
       })
     }

@@ -28,7 +28,7 @@
       <div class="element-item exchange col-xs-6" v-for="(shopcar,index) in this.$store.state.carlist" :key="index">
         <div class="thumbnail">
           <a v-bind:href="shopcar['url']" class="noselect">
-            <img src="http://placehold.it/220x220">
+            <img v-bind:src="shopcar['carImageUrl']">
           </a>
           <div class="caption">
             <h4 class="pull-right">${{shopcar['price']}}</h4>
@@ -80,6 +80,7 @@ export default {
         success: function (data) {
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/cardetail?index=' + i
+            data[i].appointurl = '#/appointcar?index=' + i
           }
           store.commit('writecarlist', {data: data})
         }

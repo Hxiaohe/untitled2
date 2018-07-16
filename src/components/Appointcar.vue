@@ -74,7 +74,7 @@
       <div>
         <ul class="nav nav-pills">
           <li><a href="#" ><span class="glyphicon glyphicon-headphones"></span>客服</a></li>
-          <li><a href="/#/appointcar?index=0">预约试车</a></li>
+          <li><a v-bind:href="this.$store.state.carlist[GetQueryString()]['appointurl']">预约试车</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>加入购物车</a></li>
           <li><a href="#">立即购买</a></li>
         </ul>
@@ -95,7 +95,7 @@ export default {
     },
     appointcar: function () {
       $.ajax({
-        url: 'http://localhost:8080/reservation',
+        url: 'http://localhost:8080/reservation/',
         type: 'POST',
         header: 'http://localhost:8081',
         headers: {
@@ -103,7 +103,8 @@ export default {
         },
         data: {
           'message': $('#name').val() + $('#Tel').val() + $('#Date').val(),
-          'carId': this.$store.state.carlist[0]['carId']
+          'category': this.$store.state.carlist[this.GetQueryString()]['category'],
+          'sellerProfileId': this.$store.state.carlist[this.GetQueryString()]['sellerId']
         },
         success: function (data) {
           window.location.href = '#/submitresult'

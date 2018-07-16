@@ -20,7 +20,7 @@
       <br>
       <form class="return" role="form" action="">
         <div class="form-group" id="button2">
-          <button type="submit" class="btn btn-default" onclick="javascript:window.location.href='#/sellercenter';">确定</button>
+          <button type="submit" class="btn btn-default" onclick="javascript:window.location.href=this.$store.state.carlist[0]['url'];">确定</button>
                <br>
                <br>
              </div>

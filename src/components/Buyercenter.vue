@@ -64,7 +64,7 @@ export default {
   computed: {
   },
   created () {
-    store.commit('writetoken', {data: this.GetQueryString()})
+    if (this.GetQueryString() != null) { store.commit('writetoken', {data: this.GetQueryString()}) }
     $.ajax({
       url: 'http://localhost:8080/user/profile',
       type: 'GET',

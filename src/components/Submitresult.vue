@@ -28,11 +28,13 @@
 </template>
 
 <script>
+import store from '../store'
+
 export default {
   name: 'Submitresult',
   methods: {
     tobuyercenter: function () {
-      window.location.href = '#/buyercenter'
+      window.location.href = '#/buyercenter?token=' + store.state.token
     }
   }
 }

@@ -51,7 +51,7 @@ export default {
         },
         success: function () {
           store.commit('writetoken', {data: $('#token').val()})
-          window.location.href = '#/sellercenter'
+          window.location.href = '#/sellercenter?token=' + store.state.token
         }
       })
     },
@@ -65,7 +65,7 @@ export default {
         },
         success: function () {
           store.commit('writetoken', {data: $('#token').val()})
-          window.location.href = '#/buyercenter'
+          window.location.href = '#/buyercenter?token=' + store.state.token
         }
       })
     },

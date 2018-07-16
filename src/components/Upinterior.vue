@@ -29,8 +29,8 @@
       </div>
       <br>
       <div class="form-group">
-        <label for="interiorImageUrl" class="col-xs-3 control-label text-center">选择图片</label>
-        <input type="file" id="interiorImageUrl" >
+        <label for="interiorImage" class="col-xs-3 control-label text-center">选择图片</label>
+        <input type="file" id="interiorImage" v-on:change="upinteriorimage">
       </div>
       <br>
       <br>
@@ -79,7 +79,7 @@ export default {
         },
         data: {
           'amount': $('#amount').val(),
-          'interiorImageUrl': $('#interiorImageUrl').val(),
+          'interiorImageUrl': store.state.interiorimage,
           'brand': $('#brand').val(),
           'name': $('#name').val(),
           'price': $('#price').val(),
@@ -90,6 +90,23 @@ export default {
         success: function (data) {
           store.commit('addtointeriorlist', {data: data})
           if (data['message'] === 'ok') { window.location.href = '#/upinteriorsuccess' } else { alert('上架失败') }
+        }
+      })
+    },
+    upinteriorimage: function () {
+      var formData = new FormData()
+      formData.append('interiorImage', $('#interiorImage')[0].files[0])
+
+      $.ajax({
+        url: 'http://localhost:8080/interior/image',
+        type: 'POST',
+        cache: false,
+        header: 'http://localhost:8081',
+        processData: false,
+        contentType: false,
+        data: formData,
+        success: function (data) {
+          store.commit('writeinteriorimage', {data: data['interiorImageUrl']})
         }
       })
     }

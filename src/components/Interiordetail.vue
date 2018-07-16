@@ -3,7 +3,7 @@
     <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/CSS/interiordetail.css" rel="stylesheet">
     <div style="width: 100%; height: 30vh;">
-      <img id="imageUrl" src="" width="900" height="300" class="img-responsive" alt="内饰">
+      <img id="imageUrl" v-bind:src="this.$store.state.interiorlist[GetQueryString()]['interiorImageUrl']" width="900" height="300" class="img-responsive" alt="内饰">
     </div>
 
     <div class="panel panel-default" style="height: 7vh; margin-bottom: 0px; background-color: rgba(240,248,255,0.43)">
