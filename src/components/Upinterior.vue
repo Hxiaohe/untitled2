@@ -68,6 +68,15 @@ import store from '../store'
 var $ = require('jquery')
 export default {
   name: 'Upinterior',
+  data () {
+    return {
+    }
+  },
+  computed: {
+  },
+  created () {
+    if (this.GetQueryString() != null) { store.commit('writetoken', {data: this.GetQueryString()}) }
+  },
   methods: {
     upinterior: function () {
       $.ajax({
@@ -109,6 +118,10 @@ export default {
           store.commit('writeinteriorimage', {data: data['interiorImageUrl']})
         }
       })
+    },
+    GetQueryString: function () {
+      var r = this.$route.fullPath.split('=')[1]
+      if (r != null) return (r); return null
     }
   }
 }

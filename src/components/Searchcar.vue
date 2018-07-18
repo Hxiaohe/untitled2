@@ -1,105 +1,114 @@
 <template>
   <div class="searchcar">
-    <link href="static/CSS/upnew.css" rel="stylesheet">
-    <br>
-    快速找车
-    <hr>
-    <br>
-    <div class="panel panel-default">
-      <div class="panel-body">
-        <form method="get" action="" style="margin:0px;display:inline;">
-          <button type="button" class=" btn btn-default " id="s1" v-on:click.prevent="get5wdowm">
-            <a href="#">5w以下</a>   </button></form>
-        <form method="get" action="" style="margin:0px;display:inline;">
-          <button type="button" class="btn btn-default" id="s2" v-on:click.prevent="get5to8">
-            <a href="#"> 5-8w</a>   </button></form>
-        <form method="get" action="" style="margin:0px;display:inline;">
-          <button type="button" class="btn btn-default" id="s3" v-on:click.prevent="get10to15">10-15w</button></form>
+    <link href="/static/CSS/SelectCar.css" type="text/css" rel="stylesheet">
+    <div class="template">
+      <div class="header">
+        快速找车
       </div>
-    </div>
-      <br>
-      <br>
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <form method="get" action="" style="margin:0px;display:inline;">
-            <button type="button" class=" btn btn-default " id="s4" v-on:click.prevent="getSUV">
-              <a href="#">SUV</a>   </button></form>
-          <form method="get" action="" style="margin:0px;display:inline;">
-            <button type="button" class="btn btn-default" id="s5" v-on:click.prevent="getjc">
-              <a href="#"> 紧凑型</a>   </button></form>
-          <form method="get" action="" style="margin:0px;display:inline;">
-            <button type="button" class="btn btn-default" id="s6" v-on:click.prevent="getzd">
-              <a href="#"> 自动 </a>  </button></form>
+      <div class="line1"></div>
+      <div class="layer">
+        <input type="button" class="button1" value="5W以下" v-on:click.prevent="get5wdowm">
+        <input type="button" class="button1" value="5-10W" v-on:click.prevent="get5to8">
+        <input type="button" class="button1" value="10-15W" v-on:click.prevent="get10to15">
+      </div>
+      <div class="layer">
+        <input type="button" class="button1" value="SUV" v-on:click.prevent="getSUV">
+        <input type="button" class="button1" value="紧凑型" v-on:click.prevent="getjc">
+        <input type="button" class="button1" value="自动" v-on:click.prevent="getzd">
+      </div>
+      <div class="line3"></div>
+      <div class="layer">
+        <div class="left">
+          品牌
+        </div>
+        <div class="right">
+          <input type="text" name="brand" class="input1" id="brand">
         </div>
       </div>
-        <br>
-        <br>
-        <hr>
-        <br>
-        <br>
-        <form class="form-horizontal" role="form" action="">
-          <div class="form-group">
-            <label for="brand" class="col-xs-3 control-label text-center" style="padding-top: 8px">品牌&nbsp;&nbsp;</label>
-            <select class="form-control" id="brand">
-              <option>宝马</option>
-              <option>奔驰</option>
-              <option>劳斯莱斯</option>
-              <option>奥迪</option>
-              <option>大众</option>
-            </select>
-          </div>
-          <br>
-          <div class="form-group">
-            <label for="grade" class="col-xs-3 control-label text-center" style="padding-top: 8px">级别&nbsp;&nbsp;</label>
-            <select class="form-control" id="grade">
-              <option>小型</option>
-              <option>紧凑型</option>
-              <option>中型</option>
-              <option>跑车</option>
-              <option>SUV</option>
-            </select>
-          </div>
-          <br>
-          <div class="form-group">
-            <label for="lPrice" class="col-xs-3 control-label text-center" style="padding-top: 8px">价格下限</label>
-            <input type="text" class="form-control" id="lPrice">
-          </div>
-          <br>
-          <div class="form-group">
-            <label for="hPrice" class="col-xs-3 control-label text-center" style="padding-top: 8px">价格上限</label>
-            <input type="text" class="form-control" id="hPrice">
-          </div>
-          <br>
-          <div class="form-group">
-            <label for="struct" class="col-xs-3 control-label text-center" style="padding-top: 8px">结构&nbsp;&nbsp;</label>
-            <select class="form-control" id="struct">
-              <option>两厢</option>
-              <option>三厢</option>
-              <option>敞篷</option>
-            </select>
-          </div>
-          <br>
-          <div class="form-group">
-            <label for="gearbox" class="col-xs-3 control-label text-center" style="padding-top: 8px">变速箱&nbsp;</label>
-            <select class="form-control" id="gearbox">
-              <option>手动</option>
-              <option>自动</option>
-              <option>无级变速</option>
-            </select>
-          </div>
-          <br>
-          <br>
-          <div class="form-group">
-            <button type="submit" class="btn btn-default" id="button" v-on:click.prevent="getcarlist">查看结果</button>
-          </div>
-        </form>
+      <div class="layer">
+        <div class="left">
+          级别
+        </div>
+        <div class="right">
+          <select type="text" name="grade" class="input2" id="grade">
+            <option value=""></option>
+            <option value="小型车">小型车</option>
+            <option value="中型车">中型车</option>
+            <option value="大型车">大型车</option>
+            <option value="紧凑型车">紧凑型车</option>
+            <option value="中大型车">中大型车</option>
+            <option value="微型车">微型车</option>
+            <option value="跑车">跑车</option>
+            <option value="MPV">MPV</option>
+            <option value="SUV">SUV</option>
+
+          </select>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="left">
+          价格下限
+        </div>
+        <div class="right">
+          <input type="text" name="lprice" class="input1" id="lPrice">
+        </div>
+      </div>
+      <div class="layer">
+        <div class="left">
+          价格上限
+        </div>
+        <div class="right">
+          <input type="text" name="hprice" class="input1" id="hPrice">
+        </div>
+      </div>
+      <div class="layer">
+        <div class="left">
+          结构
+        </div>
+        <div class="right">
+          <select type="text" name="struct" class="input2" id="struct">
+            <option value=""></option>
+            <option value="两厢">两厢</option>
+            <option value="三厢">三厢</option>
+            <option value="掀背">掀背</option>
+            <option value="旅行版">旅行版</option>
+            <option value="硬顶敞篷车">硬顶敞篷车</option>
+            <option value="软顶敞篷车">软顶敞篷车</option>
+            <option value="硬顶跑车">硬顶跑车</option>
+            <option value="客车">客车</option>
+            <option value="货车">货车</option>
+
+          </select>
+        </div>
+      </div>
+      <div class="layer">
+        <div class="left">
+          变速箱
+        </div>
+        <div class="right">
+          <select type="text" name="gearbox" class="input2" id="gearbox">
+            <option value=""></option>
+            <option value="手动">手动</option>
+            <option value="自动">自动</option>
+            <option value="手动一体">手动一体</option>
+            <option value="无级变速">无级变速</option>
+            <option value="双离合">双离合</option>
+
+          </select>
+        </div>
+      </div>
+      <div class="layer" align="center">
+        <input type="submit" value="查看结果" id="submit1" v-on:click.prevent="getcarlist">
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 import store from '../store'
 var $ = require('jquery')
-export default {name: 'searchcar',
+export default {
+  name: 'searchcar',
   data () {
     return {
     }
@@ -257,14 +266,19 @@ export default {name: 'searchcar',
       //   }
       // })
       $.ajax({
-        url: 'http://localhost:8080/car/shelf?brand=' + $('#brand').val() + '&grade=' + $('#grade').val() + '&lPrice=' + $('#lPrice').val() + '&hPrice=' + $('#hPrice').val() +
-        '&struct=' + $('#struct').val() + '&gearbox=' + $('#gearbox').val(),
+        url: 'http://localhost:8080/car/shelf',
         type: 'GET',
 
         headers: {
           'Authorization': store.state.token
         },
         data: {
+          'brand': $('#brand').val(),
+          'grade': $('#grade').val(),
+          'lPrice': $('#lPrice').val(),
+          'hPrice': $('#hPrice').val(),
+          'struct': $('#struct').val(),
+          'gearbox': $('#gearbox').val()
         },
         success: function (data) {
           for (var i = 0; i < data.length; i++) {
@@ -287,7 +301,7 @@ export default {name: 'searchcar',
     },
     GetQueryString: function () {
       var r = this.$route.fullPath.split('=')[1]
-      if (r != null) return parseInt(r); return null
+      if (r != null) return (r); return null
     }
 
   }

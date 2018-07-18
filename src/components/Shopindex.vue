@@ -33,7 +33,7 @@
           <a v-bind:href="shopcar['url']" class="noselect">
             <img v-bind:src="shopcar['carImageUrl']">
           <div class="caption">
-            <h4 class="pull-right">${{shopcar['price']}}</h4>
+            <h4 class="pull-right"></h4>
             <h4>{{shopcar['category']}}</h4>
           </div>
           </a>
@@ -92,7 +92,7 @@ export default {
     },
     GetQueryString: function () {
       var r = this.$route.fullPath.split('=')[1]
-      if (r != null) return parseInt(r); return null
+      if (r != null) return (r); return null
     }
   }
 }

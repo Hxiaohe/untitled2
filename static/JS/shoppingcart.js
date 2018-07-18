@@ -16,7 +16,7 @@ window.onload = function () {
     for (let i = 0; i < item.length; i++) {
       if (item[i].getElementsByTagName('input')[0].checked) {
         selected++
-        price += parseInt(item[i].querySelector('.now').innerText) * parseInt(item[i].querySelector('.quantity').innerText)
+        price += (item[i].querySelector('.now').innerText) * (item[i].querySelector('.quantity').innerText)
       }
     }
     // 恢复全选状态

@@ -49,7 +49,7 @@
           <li><a href="#" ><span class="glyphicon glyphicon-headphones"></span>客服</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>查看购物车</a></li>
           <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>加入购物车</a></li>
-          <li><a href="#">购买</a></li>
+          <li><a v-bind:href="this.$store.state.interiorlist[GetQueryString()]['buyurl']">购买</a></li>
         </ul>
       </div></nav>
   </div>
@@ -61,7 +61,7 @@ export default {
   methods: {
     GetQueryString: function () {
       var r = this.$route.fullPath.split('=')[1]
-      if (r != null) return parseInt(r); return null
+      if (r != null) return (r); return null
     }
   }
 }

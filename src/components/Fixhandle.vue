@@ -1,40 +1,77 @@
 <template>
 <div class="fixhandle">
   <link rel="stylesheet" type="text/css" href="/static/CSS/appointhandle.css">
+  <div v-for="(fix,index) in this.$store.state.fixlist" :key="index">
   <form class="form-horizontal" role="form" action="">
     <div>
-      车型：<label class="type">宝马</label>
+      车型：<label class="type">{{fix['category']}}</label>
       <br>
-      需求说明：<label class="need">更换油漆</label>
+      需求说明：<label class="need">{{fix['description']}}</label>
       <br>
-      期望日期：<label class="day">2018/7/23</label>
+      期望日期：<label class="day">{{fix['date']}}</label>
       <br>
-      预约人：<label class="contact">XXX &nbsp; 156XXXXXX</label></div>
+      预约人Id：<label class="contact">{{fix['buyerId']}}</label></div>
     <div>
-      <button type="submit" class="btn btn-default" >确认处理</button></div></form>
+      <button type="submit" class="btn btn-default" v-if="fix['status']=='unapplied'" v-on:click.prevent="fixhandle(index)">确认处理</button>
+      <label  class="result" v-if="fix['status']!='unapplied'">已处理</label></div></form>
   <br>
   <hr>
-  <br>
-  <form class="form-horizontal" role="form" action="">
-    <div>
-      车型：<label class="type">宝马</label>
-      <br>
-      需求说明：<label class="need">更换油漆</label>
-      <br>
-      期望日期：<label class="day">2018/7/23</label>
-      <br>
-      预约人：<label class="contact">XXX &nbsp; 156XXXXXX</label></div>
-
-    <div>
-      <label class="result">已处理</label></div></form>
-  <br>
-  <hr>
+  </div>
 </div>
 </template>
 
 <script>
+import store from '../store'
+var $ = require('jquery')
 export default {
-  name: 'Fixhandle'
+  name: 'Fixhandle',
+  data () {
+    return {
+    }
+  },
+  computed: {
+  },
+  created () {
+    if (this.GetQueryString() != null) { store.commit('writetoken', {data: this.GetQueryString()}) }
+    this.getfixlist()
+  },
+  methods: {
+    GetQueryString: function () {
+      var r = this.$route.fullPath.split('=')[1]
+      if (r != null) return (r); return null
+    },
+    getfixlist: function () {
+      $.ajax({
+        url: 'http://localhost:8080/maintenance/order',
+        type: 'GET',
+
+        headers: {
+          'Authorization': store.state.token
+        },
+        data: {
+        },
+        success: function (data) {
+          store.commit('writefixlist', {data: data})
+        }
+      })
+    },
+    fixhandle: function (index) {
+      $.ajax({
+        url: 'http://localhost:8080/maintenance/process',
+        type: 'POST',
+
+        headers: {
+          'Authorization': store.state.token
+        },
+        data: {
+          'Id': store.state.fixlist[index]['maintenanceId']
+        },
+        success: function (data) {
+          window.location.href = '#/fixsuccess'
+        }
+      })
+    }
+  }
 }
 </script>
 

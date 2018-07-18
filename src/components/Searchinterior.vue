@@ -74,6 +74,7 @@ export default {
         success: function (data) {
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/interiordetail?index=' + i
+            data[i].buyurl = '#/buyinterior?index=' + i
           }
           store.commit('writeinteriorlist', {data: data})
           window.location.href = '#/interiorlist'
@@ -91,6 +92,7 @@ export default {
         success: function (data) {
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/interiordetail?index=' + i
+            data[i].buyurl = '#/BuyInterior?index=' + i
           }
           store.commit('writeinteriorlist', {data: data})
           window.location.href = '#/interiorlist'
@@ -108,6 +110,7 @@ export default {
         success: function (data) {
           for (var i = 0; i < data.length; i++) {
             data[i].url = '#/interiordetail?index=' + i
+            data[i].buyurl = '#/BuyInterior?index=' + i
           }
           store.commit('writeinteriorlist', {data: data})
           window.location.href = '#/interiorlist'
@@ -116,7 +119,7 @@ export default {
     },
     GetQueryString: function () {
       var r = this.$route.fullPath.split('=')[1]
-      if (r != null) return parseInt(r); return null
+      if (r != null) return (r); return null
     }
   }
 }

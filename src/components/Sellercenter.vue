@@ -1,60 +1,107 @@
 <template>
   <div class="sellercenter">
-    <link href="//cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="static/CSS/center.css" rel="stylesheet">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="jumbotron text-center">
-            <img v-bind:src="this.$store.state.user['userAvatarUrl']" alt="店铺图片"/>
-          </div>
-          <p align='center' style="color:rgba(16, 16, 16, 1);font-size:14px; font-family: Arial">{{this.$store.state.user['storeName']}}</p>
-          <br>
-          <ul class="list-group">
-            <a class="list-group-item">
-              <span>全部车辆</span>
-              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-            </a>
-            <a class="list-group-item">
-              <span>待完成汽车内饰订单</span>
-              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-            </a>
-            <a class="list-group-item">
-              <span>粉丝数量</span>
-              <span class="glyphicon glyphicon-chevron-right pull-right">999</span>
-            </a>
-          </ul>
-          <br>
-          <ul class="list-group">
-            <a class="list-group-item">
-              <span>试车申请</span>
-              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-            </a>
-            <a class="list-group-item">
-              <span>保养/维修预约信息</span>
-              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-            </a>
-          </ul>
-          <br>
-          <ul class="list-group ">
-            <a class="list-group-item" href="/#/upcar">
-              <span>车辆上新</span>
-              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-            </a>
-            <a class="list-group-item"  href="/#/upinterior">
-              <span>汽车内饰上新</span>
-              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-            </a>
-          </ul>
-          <br>
-          <ul class="list-group">
-            <a class="list-group-item" href="#/shopdetail">
-              <span>信息验证</span>
-              <span class="glyphicon glyphicon-chevron-right pull-right"></span>
-            </a>
-            <p style="color:rgba(170, 170, 170,1);left: 16px " >注：经后台人员审核通过，您才能上架商品</p>
-          </ul>
+    <link href="/static/CSS/StoreManage.css" type="text/css" rel="stylesheet">
+    <div class="template">
+      <div class="header" id="">
+        <img v-bind:src="this.$store.state.user['userAvatarUrl']" id="SM_img1" >
+      </div>
+      <div class="layer1" id="storeName">
+        {{this.$store.state.user['storeName']}}
+      </div>
+      <div class="line1"></div>
+      <div class="layer" >
+        <div class="left">
+          全部车辆
         </div>
+        <a href="#/allcar" class="right">
+          查看全部车辆>
+        </a>
+      </div>
+      <div class="line2"></div>
+      <div class="layer" >
+        <div class="left">
+          汽车内饰
+        </div>
+        <button class="right">
+          查看全部>
+        </button>
+      </div>
+      <div class="line1"></div>
+      <div class="layer" >
+        <div class="left">
+          粉丝数量
+        </div>
+        <button class="right">
+          9999
+        </button>
+      </div>
+      <div class="line1"></div>
+      <div class="layer" >
+        <div class="left">
+          购车订单
+        </div>
+        <a href="#/carorderhandle" class="right">
+          查看全部>
+        </a>
+      </div>
+      <div class="line2"></div>
+      <div class="layer" >
+        <div class="left">
+          保养/预约维修信息
+        </div>
+        <a href="#/fixhandle" class="right">
+          >
+        </a>
+      </div>
+      <div class="line1"></div>
+      <div class="layer" >
+        <div class="left">
+          预约试车信息
+        </div>
+        <a href="#/trycarhandle" class="right">
+          >
+        </a>
+      </div>
+      <div class="line1"></div>
+      <div class="layer" >
+        <div class="left">
+          车辆上新
+        </div>
+        <a href="/#/upcar" class="right">
+          >
+        </a>
+      </div>
+      <div class="line1"></div>
+      <div class="layer" >
+        <div class="left">
+          汽车内饰上新
+        </div>
+        <a href="/#/upinterior" class="right">
+          >
+        </a>
+      </div>
+      <div class="line1"></div>
+      <div class="layer" >
+        <div class="left">
+          信息验证
+        </div>
+        <a href="#/shopdetail" class="right">
+          >
+        </a>
+      </div>
+      <div class="layer" >
+        <div class="text">
+          注：经后台人员审核通过，您才能上架商品
+        </div>
+      </div>
+      <div class="line2"></div>
+      <div class="layer" >
+        <div class="left">
+          设置
+        </div>
+        <button class="right">
+          账户管理>
+        </button>
       </div>
     </div>
   </div>
@@ -88,7 +135,7 @@ export default {
   methods: {
     GetQueryString: function () {
       var r = this.$route.fullPath.split('=')[1]
-      if (r != null) return parseInt(r); return null
+      if (r != null) return (r); return null
     }
   }
 }

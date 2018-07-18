@@ -8,6 +8,9 @@ const store = new Vuex.Store({
     interiorlist: [],
     shoplist: [],
     shopcarlist: [],
+    fixlist: [],
+    trycarlist: [],
+    carorderlist: [],
     carimage: '',
     interiorimage: '',
     avatarimage: '',
@@ -51,6 +54,15 @@ const store = new Vuex.Store({
     },
     writelicenseimage (state, payload) {
       state.licenseimage = payload.data
+    },
+    writefixlist (state, payload) {
+      state.fixlist = payload.data
+    },
+    writetrycarlist (state, payload) {
+      state.trycarlist = payload.data
+    },
+    writecarorderlist (state, payload) {
+      state.carorderlist = payload.data
     }
   }
 })

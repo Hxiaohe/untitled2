@@ -90,7 +90,7 @@ export default {
   methods: {
     GetQueryString: function () {
       var r = this.$route.fullPath.split('=')[1]
-      if (r != null) return parseInt(r)
+      if (r != null) return (r)
       return null
     },
     appointcar: function () {

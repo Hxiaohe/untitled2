@@ -29,7 +29,6 @@
               </div>
               <hr style="margin: 0px 5px">
             </div>
-
           </div>
         </div>
         <div class="tab-pane fade" id="sales">

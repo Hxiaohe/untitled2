@@ -11,15 +11,15 @@
           </div>
           <br>
           <ul class="list-group">
-            <a class="list-group-item">
-              <span>我的订单</span>
+            <a class="list-group-item" href="#/buyfix">
+              <span>保养维修信息</span>
               <span class="glyphicon glyphicon-chevron-right pull-right"></span>
             </a>
-            <a class="list-group-item">
-              <span>待完成订单</span>
+            <a class="list-group-item" href="#/buytrycar">
+              <span>预约试车订单</span>
               <span class="glyphicon glyphicon-chevron-right pull-right"></span>
             </a>
-            <a class="list-group-item">
+            <a class="list-group-item" href="#/carorderhandle">
               <span>我的车辆</span>
               <span class="glyphicon glyphicon-chevron-right pull-right"></span>
             </a>
@@ -79,7 +79,7 @@ export default {
   methods: {
     GetQueryString: function () {
       var r = this.$route.fullPath.split('=')[1]
-      if (r != null) return parseInt(r); return null
+      if (r != null) return (r); return null
     }
   }
 }

@@ -29,6 +29,14 @@ import Payresult from '@/components/Payresult'
 import Interiorlist from '@/components/Interiorlist'
 import Appointresult from '@/components/Appointresult'
 import Nocar from '@/components/Nocar'
+import Carorder from '@/components/Carorder'
+import Allcar from '@/components/Allcar'
+import Fixsuccess from '@/components/Fixsuccess'
+import Trycarsuccess from '@/components/Trycarsuccess'
+import Carorderhandle from '@/components/Carorderhandle'
+import Buytrycar from '@/components/Buytrycar'
+import Buyfix from '@/components/Buyfix'
+import Buyinterior from '@/components/Buyinterior'
 // import Shoppingcart from '@/components/Shoppingcart'
 Vue.use(Router)
 
@@ -178,6 +186,46 @@ export default new Router({
       path: '/nocar',
       name: 'Nocar',
       component: Nocar
+    },
+    {
+      path: '/carorder',
+      name: 'Carorder',
+      component: Carorder
+    },
+    {
+      path: '/allcar',
+      name: 'Allcar',
+      component: Allcar
+    },
+    {
+      path: '/fixsuccess',
+      name: 'Fixsuccess',
+      component: Fixsuccess
+    },
+    {
+      path: '/trycarsuccess',
+      name: 'Trycarsuccess',
+      component: Trycarsuccess
+    },
+    {
+      path: '/carorderhandle',
+      name: 'Carorderhandle',
+      component: Carorderhandle
+    },
+    {
+      path: '/buytrycar',
+      name: 'Buytrycar',
+      component: Buytrycar
+    },
+    {
+      path: '/buyfix',
+      name: 'Buyfix',
+      component: Buyfix
+    },
+    {
+      path: '/buyinterior',
+      name: 'Buyinterior',
+      component: Buyinterior
     }
     // },
     // {
