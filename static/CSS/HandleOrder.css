@@ -1,0 +1,24 @@
+.button1{
+    margin-top: 30px;
+    border-radius: 5px;
+    font-size: 13px;
+    width: 150px;
+    height: 36px;
+    color: white;
+    border: #007dff 0 solid;
+    background-color: rgb(255, 153, 0);
+    padding: 5px;
+}
+.button1:hover{
+    background-color: rgb(223, 135, 0);
+}
+.layer{
+    float: top;
+    width: 100%;
+    padding: 5px;
+    height: 60px;
+    margin-top: 15px
+}
+.template{
+    min-height: 750px;
+}

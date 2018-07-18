@@ -1,0 +1,54 @@
+.template{
+    min-height: 750px;
+}
+.layer{
+    float: top;
+    width: 100%;
+    padding: 5px;
+    height: 24px;
+    margin: 5px;
+}
+.left{
+    float: left;
+    width: 35%;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 3px;
+    /*font-family: 黑体;*/
+}
+.right{
+    float: right;
+    width: 65%;
+}
+.input1{
+    /*text-align: left;*/
+    width: 90%;
+    height: 20px;
+    border: rgba(189, 189, 189, 0.8) 1px solid;
+}
+#submit1{
+    font-size: 15px;
+    color: white;
+    font-weight: bolder;
+    background-color: rgb(255, 133, 0);
+    border: rgba(0,0,0,0.93) 0 ;
+    width: 150px;
+    padding: 5px;
+    letter-spacing: 3px;
+    border-radius: 2px;
+}
+.button{
+    border: rgba(231,231,231,0.52) 0 solid;
+    opacity: 0;
+    font-size: 60px;
+    margin-top: 5px;
+    position: absolute;
+}
+.layer5{
+    position: relative;
+    float: top;
+    width: 100%;
+    padding: 5px;
+    height: 94px;
+    margin: 5px;
+}

@@ -1,19 +1,22 @@
 <template>
 <div class="trycarhandle">
-  <link rel="stylesheet" type="text/css" href="/static/CSS/appointhandle.css">
-  <div v-for="(trycar,index) in this.$store.state.trycarlist" :key="index">
-    <form class="form-horizontal" role="form" action="">
-      <div>
-        车型：<label class="type">{{trycar['category']}}</label>
-        <br>
-        预约信息：<label class="day">{{trycar['message']}}</label>
-        <br>
-        预约人Id：<label class="contact">{{trycar['buyerId']}}</label></div>
-      <div>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="/static/CSS/HandleTestCar.css" type="text/css" rel="stylesheet">
+  <div class="template">
+    <div v-for="(trycar,index) in this.$store.state.trycarlist" :key="index">
+    <div class="layer">
+      <div class="left">
+        <div class="text1">  车型：{{trycar['category']}}</div>
+        <div class="text1"> 申请信息：{{trycar['message']}}</div>
+        <div class="text1"> 申请人：{{trycar['buyerId']}}</div>
+      </div>
+      <div class="right">
         <button type="submit" class="btn btn-default" v-if="trycar['state']=='unapplied'" v-on:click.prevent="trycarhandle(index)">确认处理</button>
-        <label  class="result" v-if="trycar['state']!='unapplied'">已处理</label></div></form>
-    <br>
-    <hr>
+        <label  class="result" v-if="trycar['state']!='unapplied'">已处理</label>
+      </div>
+    </div>
+    <div class="line1"></div>
+    </div>
   </div>
 </div>
 </template>

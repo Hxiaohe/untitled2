@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#carInfo{
+    width: 100%;
+}
+.car-list{
+    width: 100%;
+    height: 125px;
+}
+.carPic{
+    float: left;
+    width: 30%;
+    height: 100%;
+}
+.describe{
+    float: left;
+    width: 70%;
+    height: 100%;
+}
+.describe p{
+    font-size: small;
+}
+.describe span{
+    font-size: smaller;
+    color: gray;
+}
+.describe label{
+    font-size: small;
+    color: red;
+}
+
+#way{
+    width: 100%;
+    height: 50px;
+    padding-top: 15px;
+    border: #cccccc 1px solid;
+    border-radius: 3px;
+}
+#way span{
+    float: left;
+    margin-left: 2%;
+    width: 30%;
+    font-weight: bold;
+}
+#way .radioStyle{
+    float: left;
+    width: 20%;
+    margin-left: 2%;
+    font-family: 华文宋体;
+}
+
+#other{
+    padding-top: 15px;
+    font-size: smaller;
+    color: gray;
+    width: 15%;
+    text-align: center;
+    float: top;
+}
+#text{
+    margin-bottom: 10px;
+}
+.list{
+    height: 40px;
+}
+.name{
+    font-weight: bold;
+    float: left;
+}
+.value{
+    float: right;
+    color: red;
+}
+
+.bottom{
+    width: 100%;
+    float: bottom;
+    position: absolute;
+}
+#left{
+    width: 70%;
+    float: left;
+}
+#left p{
+    margin-top: 10px;
+    float: right;
+}
+#left p span{
+    font-size: small;
+    font-weight: bold;
+}
+#price{
+    color: red;
+}
+#right{
+    width: 30%;
+    float: right;
+}
+#priceBtn{
+    background-color: red;
+    color: white;
+    float: right;
+    margin-right: 10px;
+}

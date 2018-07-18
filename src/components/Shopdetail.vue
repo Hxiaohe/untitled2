@@ -1,58 +1,91 @@
 <template>
 <div class="shopdetail">
-  <link rel="stylesheet" type="text/css" href="/static/CSS/upnew.css">
-  <br>
-  <br>
-  <br>
-  <div class="container">
-    <form class="form-horizontal" role="form" action="">
-      <div class="form-group">
-        <label for="shopname" class="col-xs-3 control-label text-center" >店铺名称</label>
-        <input type="text" class="form-control" id="shopname">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="/static/CSS/StoreDetail.css" type="text/css" rel="stylesheet">
+  <div class="template">
+    <form>
+      <div class="layer" >
+        <div class="left">
+          店铺名称
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1">
+        </div>
+      </div>
+
+      <div class="layer5" >
+        <div class="left">
+          店铺背景图
+        </div>
+        <div class="right">
+          <input type="file" name="" class="button sub_hidefileupload" id="bgimageurl" v-on:change="upavatar">
+          <img src="/static/img/上传图片.png">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          背景图URL
+        </div>
+        <div class="right">
+          <input type="text"  class="input1 txt_autorssfeed" readonly="readonly" value="选择图片后自动导入">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          店铺地址
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" id="address">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          店主姓名
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" value="必须输入真实姓名" id="owner">
+        </div>
+      </div>
+
+      <div class="layer" >
+        <div class="left">
+          身份证号
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" id="IDcard">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          营业执证照注册号
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" id="number">
+        </div>
+      </div>
+
+      <div class="layer5" >
+        <div class="left">
+          营业执照凭证
+        </div>
+        <div class="right">
+          <input type="file" name="" class="button sub_hidefileupload2" id="imageurl" v-on:change="uplicense">
+          <img src="/static/img/上传图片.png">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          上传凭证URL
+        </div>
+        <div class="right">
+          <input type="text" class="input1 txt_autorssfeed2" readonly="readonly" value="选择图片后自动导入">
+        </div>
       </div>
       <br>
-      <div class="form-group">
-        <label for="bgimageurl" class="col-xs-3 control-label text-center">背景图片</label>
-        <input type="file" id="bgimageurl" v-on:change="upavatar">
+      <div class="layer" align="center">
+        <input type="submit" value="确认提交" id="submit1" v-on:click.prevent="shopdetail">
       </div>
-      <br>
-      <div class="form-group">
-        <label for="address" class="col-xs-3 control-label text-center" >店铺地址</label>
-        <input type="text" class="form-control" id="address">
-      </div>
-      <br>
-      <div class="form-group">
-        <label for="owner" class="col-xs-3 control-label text-center" >店主姓名</label>
-        <input type="text" class="form-control" id="owner">
-      </div>
-      <br>
-      <div class="form-group">
-        <label for="IDcard" class="col-xs-3 control-label text-center">身份证号</label>
-        <input type="text" class="form-control" id="IDcard">
-      </div>
-      <br>
-      <div class="form-group">
-        <label for="phoneNumber" class="col-xs-3 control-label text-center">联系电话</label>
-        <input type="text" class="form-control" id="phoneNumber">
-      </div>
-      <br>
-      <div class="form-group">
-        <label for="number" class="col-xs-3 control-label text-center">营业证号</label>
-        <input type="text" class="form-control" id="number">
-      </div>
-      <br>
-      <div class="form-group">
-        <label for="imageurl" class="col-xs-3 control-label text-center">执证凭证</label>
-        <input type="file" id="imageurl" v-on:change="uplicense">
-      </div>
-      <br>
-      <br>
-      <br>
-      <div class="form-group" id="button">
-        <button type="submit" class="btn btn-default" v-on:click.prevent="shopdetail">确定提交</button>
-        <br>
-        <br>
-      </div>
+
     </form>
   </div>
 </div>
@@ -101,6 +134,7 @@ export default {
         data: formData,
         success: function (data) {
           store.commit('writeavatarimage', {data: data['userAvatarUrl']})
+          $('.txt_autorssfeed').val($('.sub_hidefileupload').val())
         }
       })
     },
@@ -118,6 +152,7 @@ export default {
         data: formData,
         success: function (data) {
           store.commit('writelicenseimage', {data: data['businessLicenseUrl']})
+          $('.txt_autorssfeed2').val($('.sub_hidefileupload2').val())
         }
       })
     }

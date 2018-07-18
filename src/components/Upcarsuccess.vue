@@ -1,30 +1,19 @@
 <template>
     <div class="upcarsuccess">
-      <link rel="stylesheet" href="static/CSS/upnewresult.css">
-      <meta name="renderer" content="webkit">
-      <br>
-      <br>
-
-      <img  v-bind:src="this.$store.state.carlist['carImageUrl']" alt="商品图片"/>
-
-      <p align='center' style="color: rgba(16, 16, 16, 1);font-size: 14px;font-family: Arial">商品上架成功！</p>
-      <br>
-      <form class="info" role="form" action="">
-        <div class="form-group" id="button">
-          <button type="submit" class="btn btn-default" onclick="javascript:window.location.href='#/allcar';">查看详情</button>
-          <br>
-          <br>
-        </div>
-      </form>
-      <br>
-      <br>
-      <form class="return" role="form" action="">
-        <div class="form-group" id="button2">
-          <button type="submit" class="btn btn-default" onclick="javascript:window.location.href='#/sellercenter';">确定</button>
-               <br>
-               <br>
-             </div>
-    </form>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="/static/CSS/UpdateResult.css" type="text/css" rel="stylesheet">
+      <div class="layer2 sizeImg" >
+        <img v-bind:src="this.$store.state.carlist['carImageUrl']" id="carImg1">
+      </div>
+      <div class="layer text1" align="center">
+        车辆上成功
+      </div>
+      <div class="layer footer" align="center" >
+        <a href="#/allcar"><input type="submit" value="查看详情" class="submit1"></a>
+      </div>
+      <div class="layer footer" align="center" >
+        <a href="#/sellercenter"><input type="submit" value="确定" class="submit1"></a>
+      </div>
     </div>
 </template>
 

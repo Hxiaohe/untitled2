@@ -1,0 +1,36 @@
+.layer2{
+    float: top;
+}
+.layer{
+    float: top;
+    width: 100%;
+    padding: 5px;
+    height: 24px;
+    margin: 5px;
+}
+.text1{
+    font-size: 15px;
+}
+.sizeImg{
+    width: 90%;
+    margin-left: 5%;
+}
+#carImg1{
+    width: 100%;
+    height: auto;
+
+}
+.submit1{
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(255, 160, 0);
+    border: rgb(0, 0, 0) 0 ;
+    width: 150px;
+    padding: 5px;
+    letter-spacing: 3px;
+    border-radius: 2px;
+}
+.footer{
+    margin-top: 20px;
+}

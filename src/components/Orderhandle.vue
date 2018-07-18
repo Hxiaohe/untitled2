@@ -1,48 +1,74 @@
 <template>
 <div class="orderhandle">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/static/CSS/orderhandle.css" />
-  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <div id="box">
-    <div class="container">
-      <form class="form-horizontal" role="form" action="">
-        <div class="second_one"><span>店铺：<label id="shopname">{{this.$store.state.carlist[GetQueryString()]['storeName']}}</label></span></div>
-        <div class="second_two">
-          <div class="two_one"><img src="" alt="" /></div>
-          <div class="two_two">{{this.$store.state.carlist[GetQueryString()]['category']}} {{this.$store.state.carlist[GetQueryString()]['gearbox']}} {{this.$store.state.carlist[GetQueryString()]['engine']}}</div>
-          <div class="two_three">{{this.$store.state.carlist[GetQueryString()]['brand']}}</div>
-          <div class="two_four"><span>$</span>{{this.$store.state.carlist[GetQueryString()]['price']}}</div>
-          <div class="two_five"></div>
-          <div class="two_six">数量：1</div>
-          <div class="two_seven"></div>
-        </div>
-        <span class="way">配送方式</span>
-          <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>快速配送
-          </label>
-          <label>
-            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">门店自提
-          </label>
-        <div class="form-group">
-          <label for="name" class="col-xs-3 control-label text-center">姓名 &nbsp; </label>
-          <input type="text" class="form-control" id="name">
-        </div>
-        <div class="form-group">
-          <label for="phone" class="col-xs-3 control-label text-center">联系电话 &nbsp; </label>
-          <input type="text" class="form-control" id="phone">
-        </div>
-        <div class="form-group">
-          <label for="address" class="col-xs-3 control-label text-center">配送地址 &nbsp; </label>
-          <input type="text" class="form-control" id="address">
-        </div>
-          <span class="qi">实付款</span>
-          <span class="ba">$</span>
-          <span class="jiu" id="shu3">{{this.$store.state.carlist[GetQueryString()]['price']}}</span>
-      <div class="diqi" v-on:click.prevent="buycar"><span>提交订单</span></div>
-      </form>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,scale-initial=1.0">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css">
+  <link rel="stylesheet" href="/static/CSS/OrderSubmit.css" type="text/css">
+  <form>
+    <div id="carInfo">
+      <ul class="list-group">
+        <li class="list-group-item car-list">
+          <div class="carPic">
+            <img src="" class="pic"/>
+          </div>
+          <div class="describe">
+            <p>{{this.$store.state.carlist[GetQueryString()]['category']}} {{this.$store.state.carlist[GetQueryString()]['gearbox']}} {{this.$store.state.carlist[GetQueryString()]['engine']}}</p>
+            <span>{{this.$store.state.carlist[GetQueryString()]['category']}} </span><br/>
+            <label>{{this.$store.state.carlist[GetQueryString()]['price']}}</label>
+          </div>
+        </li>
+      </ul>
     </div>
-  </div>
+    <div id="way">
+      <span>配送方式</span>
+      <div class="radioStyle">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>快速配送
+        </label>
+      </div>
+      <div class="radioStyle">
+        <label>
+          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">门店自提
+        </label>
+      </div>
+    </div>
+    <div id="other">备注</div>
+    <div id="text">
+      <textarea class="form-control" rows="3"></textarea>
+    </div>
+    <ul class="list-group">
+      <li class="list-group-item list">
+        <div class="name">商品总额</div>
+        <div class="value">{{this.$store.state.carlist[GetQueryString()]['price']}}</div>
+      </li>
+      <li class="list-group-item list">
+        <div class="name">优惠券</div>
+        <div class="value">-0</div>
+      </li>
+      <li class="list-group-item list">
+        <div class="name">运费</div>
+        <div class="value">+0</div>
+      </li>
+      <li class="list-group-item list">
+        <div class="name">实付款：</div>
+        <div class="value">{{this.$store.state.carlist[GetQueryString()]['price']}}</div>
+      </li>
+    </ul>
+    <div class="bottom">
+      <div id="left">
+        <p>
+          <span>合计：</span>
+          <label id="price">{{this.$store.state.carlist[GetQueryString()]['price']}}</label>
+        </p>
+      </div>
+      <div id="right">
+        <button class="btn" id="priceBtn" type="submit" v-on:click.prevent="buycar">
+          提交订单
+        </button>
+      </div>
+    </div>
+  </form>
 </div>
 </template>
 

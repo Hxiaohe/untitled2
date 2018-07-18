@@ -1,45 +1,64 @@
 <template>
   <div class="appointfix">
-    <link href="/static/CSS/upnew.css" rel="stylesheet">
-    <br>
-    <br>
-    <p id="explain">请填写以下信息申请维修，该4S店会有专门的服务人员与您联系。
-    </p>
-    <br>
-    <div class="container">
-      <form class="form-horizontal" role="form" action="">
-        <div class="form-group">
-          <label for="sellerId" class="col-xs-3 control-label text-center" >选择店铺</label>
-          <select class="form-control" id="sellerId">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="/static/CSS/OrderMaintain.css" type="text/css" rel="stylesheet">
+    <div class="template">
+      <div class="layer2 text3">
+        请填写以下信息申请维修保养，该4S店会有专门的服务人员与您联系
+      </div>
+      <div class="layer" >
+        <div class="left">
+          选择店铺
+        </div>
+        <div class="right">
+          <select type="text" name="" class="input2">
             <option v-for="(shop,index) in this.$store.state.shoplist" :key="index" v-bind:value="shop['id']">{{shop['storeName']}}</option>
           </select>
         </div>
-        <br>
-        <br>
-        <div class="form-group">
-          <label for="category" class="col-xs-3 control-label text-center" >处理车型</label>
-          <input type="text" class="form-control" id="category">
+      </div>
+      <div class="layer" >
+        <div class="left">
+          处理车型
         </div>
-        <br>
-        <br>
-        <div class="form-group">
-          <label for="description" class="col-xs-3 control-label text-center" >需求说明</label>
-          <input type="text" class="form-control" id="description">
+        <div class="right">
+          <input type="text" name="" class="input1" id="category">
         </div>
-        <br>
-        <br>
-        <div class="form-group">
-          <label for="date" class="col-xs-3 control-label text-center">期望时间</label>
-          <input type="text" class="form-control" id="date">
+      </div>
+      <div class="layer" >
+        <div class="left">
+          期望时间
         </div>
-        <br>
-        <br>
-        <br>
-        <div class="form-group" id="button">
-          <button type="submit" class="btn btn-default" v-on:click="appointfix">确定预约</button>
-          <br>
-          <br>
-        </div></form>
+        <div class="right">
+          <input type="text" name="" class="input1" id="date">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          联系人姓名
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          联系电话
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          需求说明
+        </div>
+        <div class="right">
+          <textarea type="text" name="" class="input3" id="description"></textarea>
+        </div>
+      </div>
+      <div class="layer" align="center">
+        <input type="button" value="确认预约" id="button1" v-on:click="appointfix">
+      </div>
     </div>
   </div>
 </template>

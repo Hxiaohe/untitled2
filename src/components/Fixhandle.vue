@@ -1,21 +1,23 @@
 <template>
 <div class="fixhandle">
-  <link rel="stylesheet" type="text/css" href="/static/CSS/appointhandle.css">
-  <div v-for="(fix,index) in this.$store.state.fixlist" :key="index">
-  <form class="form-horizontal" role="form" action="">
-    <div>
-      车型：<label class="type">{{fix['category']}}</label>
-      <br>
-      需求说明：<label class="need">{{fix['description']}}</label>
-      <br>
-      期望日期：<label class="day">{{fix['date']}}</label>
-      <br>
-      预约人Id：<label class="contact">{{fix['buyerId']}}</label></div>
-    <div>
-      <button type="submit" class="btn btn-default" v-if="fix['status']=='unapplied'" v-on:click.prevent="fixhandle(index)">确认处理</button>
-      <label  class="result" v-if="fix['status']!='unapplied'">已处理</label></div></form>
-  <br>
-  <hr>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="/static/CSS/HandleMaintain.css" type="text/css" rel="stylesheet">
+  <div class="template">
+    <div v-for="(fix,index) in this.$store.state.fixlist" :key="index">
+    <div class="layer">
+      <div class="left">
+        <div class="text1">  车型：{{fix['category']}}</div>
+        <div class="text1"> 期望日期：{{fix['date']}}</div>
+        <div class="text1"> 申请人：{{fix['userName']}}</div>
+        <div class="text1"> 需求说明：{{fix['description']}}</div>
+      </div>
+      <div class="right">
+        <button type="submit" class="btn btn-default" v-if="fix['status']=='unapplied'" v-on:click.prevent="fixhandle(index)">确认处理</button>
+        <label  class="result" v-if="fix['status']!='unapplied'">已处理</label>
+      </div>
+    </div>
+    <div class="line1"></div>
+    </div>
   </div>
 </div>
 </template>

@@ -1,0 +1,80 @@
+.template{
+    min-height: 750px;
+}
+.line1{
+    border: rgba(231, 231, 231, 0.52) 0.5px solid;
+    display: block;
+}
+.line2{
+    border: rgba(209, 209, 209, 0.7) 4px solid;
+    display: block;
+}
+.line3{
+    border: rgba(231, 231, 231, 0.52) 0.5px solid;
+    display: block;
+    margin: 15px;
+}
+.header{
+    width:100%;
+    float: top;
+    display: block;
+    height: 28px;
+    background-color: white;
+    padding: 0;
+    margin: 0;
+}
+.layer{
+    width:100%;
+    float: top;
+    margin: 8px;
+    display: block;
+    height: 36px;
+    background-color: white;
+    padding: 0;
+
+}
+.button1{
+    border-radius: 3px;
+    font-size: 13px;
+    width: 25%;
+    margin: 3%;
+    height: 28px;
+    background-color: white;
+    border: rgba(209, 209, 209, 0.7) 1px solid;
+}
+.left{
+    float: left;
+    width: 22%;
+    font-size: 15px;
+    text-align: center;
+    padding-top: 3px;
+    padding-left: 5px;
+    /*font-family: 黑体;*/
+}
+.right{
+    float: right;
+    width: 65%;
+}
+.input1{
+    /*text-align: left;*/
+    width: 90%;
+    height: 20px;
+    border: rgba(189, 189, 189, 0.8) 1px solid;
+}
+.input2{
+    width: 90%;
+    height: 25px;
+    border: rgba(189, 189, 189, 0.8) 1px solid;
+}
+#submit1{
+    font-size: 14px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(255, 160, 0);
+    border: rgb(0, 0, 0) 0 ;
+    width: 150px;
+    padding: 5px;
+    margin-top: 30px;
+    letter-spacing: 3px;
+    border-radius: 2px;
+}

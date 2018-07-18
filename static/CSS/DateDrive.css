@@ -1,0 +1,86 @@
+.template{
+    min-height: 750px;
+}
+.layer{
+    float: top;
+    width: 100%;
+    padding: 5px;
+    height: 24px;
+    margin: 8px;
+}
+.layer2{
+    float: top;
+    width: 100%;
+    padding: 5px;
+    height: 48px;
+    margin: 8px;
+}
+.header{
+    width:100%;
+    float: top;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+#SM_img1{
+    width: 100%;
+    height: auto;
+}
+.left1{
+    float: left;
+    font-size: 16px;
+    color: rgb(61, 61, 61);
+
+}
+.right1{
+    font-size: 16px;
+    float: right;
+    background-color: #ffffff;
+    border: rgba(0,0,0,0);
+    margin-right: 15px;
+}
+.line1{
+    border: rgba(227, 227, 227, 0.7) 0.5px solid;
+    display: block;
+}
+.text1{
+    font-weight: bolder;
+}
+.text2{
+    color: red;
+    font-weight: bolder;
+}
+.text3{
+    font-weight: bolder;
+}
+.left{
+    float: left;
+    width: 25%;
+    text-align: center;
+    padding-top: 3px;
+    font-size: 13px;
+    /*font-family: 黑体;*/
+}
+.right{
+    float: right;
+    width: 75%;
+}
+.input1{
+    /*text-align: left;*/
+    width: 90%;
+    height: 20px;
+    border: rgba(189, 189, 189, 0.8) 1px solid;
+}
+#button1{
+    margin-top: 30px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 140px;
+    height: 28px;
+    color: white;
+    border: #007dff 0 solid;
+    background-color: #8cc92c;
+}
+#button1:hover{
+    background-color: #8cc92c;
+}

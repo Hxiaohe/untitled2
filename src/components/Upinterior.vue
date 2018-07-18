@@ -1,65 +1,91 @@
 <template>
 <div class="upinterior">
-  <link rel="stylesheet" type="text/css" href="/static/CSS/upnew.css">
-  <br>
-  <br>
-  <div class="container">
-    <form class="form-horizontal" role="form" action="">
-      <div class="form-group">
-        <label for="brand" class="col-xs-3 control-label text-center" >品牌 &nbsp; </label>
-        <input type="text" class="form-control" id="brand">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="/static/CSS/UpdateInterior.css" type="text/css" rel="stylesheet">
+  <div class="template">
+    <form>
+      <div class="layer" >
+        <div class="left">
+          品牌
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" id="brand">
+        </div>
       </div>
-      <br>
-      <br>
-      <div class="form-group">
-        <label for="name" class="col-xs-3 control-label text-center" >商品名称</label>
-        <input type="text" class="form-control" id="name">
+      <div class="layer" >
+        <div class="left">
+          商品名称
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" id="name">
+        </div>
       </div>
-      <br>
-      <br>
-      <div class="form-group">
-        <label for="price" class="col-xs-3 control-label text-center" >售价 &nbsp; </label>
-        <input type="text" class="form-control" id="price">
+      <div class="layer" >
+        <div class="left">
+          售价
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" id="price">
+        </div>
       </div>
-      <br>
-      <br>
-      <div class="form-group">
-        <label for="amount" class="col-xs-3 control-label text-center">库存 &nbsp; </label>
-        <input type="text" class="form-control" id="amount">
+      <div class="layer" >
+        <div class="left">
+          库存
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" id="amount">
+        </div>
       </div>
-      <br>
-      <div class="form-group">
-        <label for="interiorImage" class="col-xs-3 control-label text-center">选择图片</label>
-        <input type="file" id="interiorImage" v-on:change="upinteriorimage">
-      </div>
-      <br>
-      <br>
-      <div class="form-group">
-        <label for="type" class="col-xs-3 control-label text-center">类型 &nbsp; </label>
-        <input type="text" class="form-control" id="type">
-      </div>
-  <br>
-  <br>
-  <div class="form-group">
-    <label for="size" class="col-xs-3 control-label text-center">规格 &nbsp;</label>
-    <input type="text" class="form-control" id="size">
-  </div>
-  <br>
-  <br>
-  <div class="form-group">
-    <label for="material" class="col-xs-3 control-label text-center">材质 &nbsp;</label>
-    <input type="text" class="form-control" id="material">
-  </div>
 
-  <br>
-  <br>
-  <br>
-  <div class="form-group" id="button">
-    <button type="submit" class="btn btn-default" v-on:click.prevent="upinterior">确定上新</button>
-    <br>
-    <br>
-  </div></form>
-</div>
+      <div class="layer5" >
+        <div class="left">
+          上传图片
+        </div>
+        <div class="right">
+          <input type="file" name="" class="button sub_hidefileupload" id="interiorImage" v-on:change="upinteriorimage">
+          <img src="/static/img/上传图片.png">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          图片URL
+        </div>
+        <div class="right">
+          <input type="text" id="txt_autorssfeed" class="input1" readonly="readonly" value="选择图片后自动导入">
+        </div>
+      </div>
+
+      <div class="layer" >
+        <div class="left">
+          类型
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" id="type">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          规格
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" id="size">
+        </div>
+      </div>
+      <div class="layer" >
+        <div class="left">
+          材质
+        </div>
+        <div class="right">
+          <input type="text" name="" class="input1" id="material">
+        </div>
+      </div>
+
+      <div class="layer" align="center" id="footer">
+        <input type="submit" value="确认上新" id="submit1" v-on:click.prevent="upinterior">
+      </div>
+
+    </form>
+  </div>
 </div>
 </template>
 
@@ -116,6 +142,7 @@ export default {
         data: formData,
         success: function (data) {
           store.commit('writeinteriorimage', {data: data['interiorImageUrl']})
+          $('#txt_autorssfeed').val($('.sub_hidefileupload').val())
         }
       })
     },

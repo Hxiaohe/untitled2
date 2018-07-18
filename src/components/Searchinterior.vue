@@ -1,33 +1,21 @@
 <template>
   <div class="searchinterior">
-    <link rel="stylesheet" href="/static/CSS/searchinterior.css">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="renderer" content="webkit">
-    <br>
-    <br>
-    <br>
-    <br>
-    <form class="chair" role="form" action="">
-      <input name="chair" type="image" value="车垫" src="/static/img/zuodian.jpg" v-on:click.prevent="carMat"/>
-    </form>
-    <p>座垫</p>
-    <br>
-    <form class="pendant" role="form" action="">
-      <input name="pendant" type="image" value="车内挂件" src="/static/img/guajian.jpg" v-on:click.prevent="carPendant"/>
-    </form>
-    <p>车内挂件</p>
-    <br>
-    <form class="cover" role="form" action="">
-      <input name="cover" type="image" value="方向盘套" src="/static/img/pantao.jpg" v-on:click.prevent="wheelCover"/>
-    </form>
-    <p>方向盘套</p>
-    <br>
-    <form class="other" role="form" action="">
-      <input name="other" type="image" value="其他" src="/static/img/baozhen.jpg" v-on:click.prevent="others"/>
-    </form>
-    <p>其它</p>
-    <br>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link href="/static/CSS/SelectInterior.css" type="text/css" rel="stylesheet">
+    <div class="template">
+      <div class="layer" align="center">
+        <input type="button" value="坐垫" class="button1" v-on:click.prevent="carMat">
+      </div>
+      <div class="layer" align="center">
+        <input type="button" value="车内挂件" class="button1" v-on:click.prevent="carPendant">
+      </div>
+      <div class="layer" align="center">
+        <input type="button" value="方向盘套" class="button1" v-on:click.prevent="wheelCover">
+      </div>
+      <div class="layer" align="center">
+        <input type="button" value="其他" class="button1" v-on:click.prevent="others">
+      </div>
+    </div>
   </div>
 </template>
 
