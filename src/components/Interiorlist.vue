@@ -12,7 +12,7 @@
       </li></ul><div id="myTabContent" class="tab-content">
     <div class="tab-pane fade in active" id="attention" >
       <div class="panel panel-default" style="background-color: rgba(251,244,255,0.09)" >
-        <div v-for="(interior,index) in this.$store.state.interiorlist" :key="index">
+        <div v-for="(interior,index) in this.$store.state.interiorlist" :key="index" v-if="interior['amount']!=0">
           <div class="panel-body" style="padding: 4px 7px;margin-top: 10px">
             <div class="media">
               <a class="media-left" href="#">
@@ -34,7 +34,7 @@
     </div>
     <div class="tab-pane fade" id="sales">
 
-      <div v-for="(interior,index) in this.$store.state.interiorlist" :key="index">
+      <div v-for="(interior,index) in this.$store.state.interiorlist" :key="index"  v-if="interior['amount']!=0">
         <div class="panel-body" style="padding: 4px 7px;margin-top: 10px">
           <div class="media">
             <a class="media-left" href="#">
@@ -54,7 +54,7 @@
 
     </div>
     <div class="tab-pane fade" id="inprice">
-      <div v-for="(interior,index) in this.$store.state.interiorlist" :key="index">
+      <div v-for="(interior,index) in this.$store.state.interiorlist" :key="index"  v-if="interior['amount']!=0">
         <div class="panel-body" style="padding: 4px 7px;margin-top: 10px">
           <div class="media">
             <a class="media-left" href="#">
