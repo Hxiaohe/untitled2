@@ -10,7 +10,7 @@
           <input type="button" class="button" value="我要成为买家" v-on:click.prevent="buyerCenter">
         </div>
         <div class="layer" align="center">
-          <input type="button" class="button" value="我要成为买家" v-on:click.prevent="sellerCenter">
+          <input type="button" class="button" value="我要成为卖家" v-on:click.prevent="sellerCenter">
         </div>
       </div>
       <input id="token" type="hidden" v-bind:value="GetQueryString()">
@@ -35,7 +35,6 @@ export default {
       $.ajax({
         url: 'https://zscg.enderqiu.cn/api/user/type?userType=seller',
         type: 'PUT',
-
         headers: {
           'Authorization': $('#token').val()
         },
@@ -49,7 +48,6 @@ export default {
       $.ajax({
         url: 'https://zscg.enderqiu.cn/api/user/type?userType=buyer',
         type: 'PUT',
-
         headers: {
           'Authorization': $('#token').val()
         },
