@@ -1,0 +1,24 @@
+.template{
+    min-height: 750px;
+}
+.layer{
+    float: top;
+    width: 100%;
+    padding: 5px;
+    height: 60px;
+}
+.text{
+    text-align: center;
+    padding-top: 40px;
+}
+.button{
+    border-radius: 5px;
+    background-color: rgba(29,255,0,0.8);
+    color: white;
+    font-weight: bold;
+    border: rgba(29,255,0,0.8) 0 solid;
+    width: 150px;
+    height: 36px;
+    padding: 5px;
+    margin-top: 15px;
+}
