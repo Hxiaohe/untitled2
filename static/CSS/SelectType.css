@@ -13,7 +13,7 @@
 }
 .button{
     border-radius: 5px;
-    background-color: rgba(29,255,0,0.8);
+    background-color: rgb(75, 215, 0);
     color: white;
     font-weight: bold;
     border: rgba(29,255,0,0.8) 0 solid;
