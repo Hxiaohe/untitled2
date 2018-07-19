@@ -71,7 +71,7 @@ export default {
   methods: {
     Getshopcarlist: function () {
       $.ajax({
-        url: 'http://localhost:8080/car/shelf',
+        url: 'http://zscg.enderqiu.cn/api/car/shelf',
         type: 'GET',
 
         headers: {

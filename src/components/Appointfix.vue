@@ -77,7 +77,7 @@ export default {
   created () {
     store.commit('writetoken', {data: this.GetQueryString()})
     $.ajax({
-      url: 'http://localhost:8080/user/profiles',
+      url: 'http://zscg.enderqiu.cn/api/user/profiles',
       type: 'GET',
 
       headers: {
@@ -91,7 +91,7 @@ export default {
   methods: {
     appointfix: function () {
       $.ajax({
-        url: 'http://localhost:8080/maintenance/order',
+        url: 'http://zscg.enderqiu.cn/api/maintenance/order',
         type: 'POST',
 
         headers: {

@@ -43,7 +43,7 @@ export default {
     },
     gettrycarlist: function () {
       $.ajax({
-        url: 'http://localhost:8080/reservation/',
+        url: 'http://zscg.enderqiu.cn/api/reservation/',
         type: 'GET',
 
         headers: {
@@ -58,7 +58,7 @@ export default {
     },
     trycarhandle: function (index) {
       $.ajax({
-        url: 'http://localhost:8080/reservation/',
+        url: 'http://zscg.enderqiu.cn/api/reservation/',
         type: 'PUT',
 
         headers: {

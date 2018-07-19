@@ -44,7 +44,7 @@ export default {
     },
     getfixlist: function () {
       $.ajax({
-        url: 'http://localhost:8080/maintenance/order',
+        url: 'http://zscg.enderqiu.cn/api/maintenance/order',
         type: 'GET',
 
         headers: {
@@ -59,7 +59,7 @@ export default {
     },
     fixhandle: function (index) {
       $.ajax({
-        url: 'http://localhost:8080/maintenance/process',
+        url: 'http://zscg.enderqiu.cn/api/maintenance/process',
         type: 'POST',
 
         headers: {

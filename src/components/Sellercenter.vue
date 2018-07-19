@@ -121,7 +121,7 @@ export default {
   created () {
     if (this.GetQueryString() != null) { store.commit('writetoken', {data: this.GetQueryString()}) }
     $.ajax({
-      url: 'http://localhost:8080/user/profile',
+      url: 'http://zscg.enderqiu.cn/api/user/profile',
       type: 'GET',
 
       headers: {

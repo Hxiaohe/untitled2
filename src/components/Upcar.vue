@@ -146,7 +146,7 @@ export default {
   methods: {
     upcar: function () {
       $.ajax({
-        url: 'http://localhost:8080/car/shelf?brand=' + $('#brand').val() + '&category=' + $('#category').val() + '&sellerProfileId=' + 2 +
+        url: 'http://zscg.enderqiu.cn/api/car/shelf?brand=' + $('#brand').val() + '&category=' + $('#category').val() + '&sellerProfileId=' + 2 +
         '&price=' + $('#price').val() + '&amount=' + $('#amount').val() +
         '&grade=' + $('#grade').val() + '&maxPower=' + $('#maxPower').val() + '&engine=' + $('#engine').val() + '&gearbox=' + $('#gearbox').val() +
         '&size=' + $('#size').val() + '&struct=' + $('#struct').val() + '&highestSpeed=' + $('#highestSpeed').val() + '&warranty=' + $('#warranty').val(),
@@ -172,7 +172,7 @@ export default {
       formData.append('carImage', $('#carImage')[0].files[0])
 
       $.ajax({
-        url: 'http://localhost:8080/car/image',
+        url: 'http://zscg.enderqiu.cn/api/car/image',
         type: 'POST',
         cache: false,
 

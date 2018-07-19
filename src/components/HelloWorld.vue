@@ -41,7 +41,7 @@ export default {
   methods: {
     sellerCenter: function () {
       $.ajax({
-        url: 'http://localhost:8080/user/type?userType=seller',
+        url: 'http://zscg.enderqiu.cn/api/user/type?userType=seller',
         type: 'PUT',
 
         headers: {
@@ -55,7 +55,7 @@ export default {
     },
     buyerCenter: function () {
       $.ajax({
-        url: 'http://localhost:8080/user/type?userType=buyer',
+        url: 'http://zscg.enderqiu.cn/api/user/type?userType=buyer',
         type: 'PUT',
 
         headers: {
