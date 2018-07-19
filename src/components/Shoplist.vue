@@ -37,7 +37,7 @@ export default {
   created () {
     store.commit('writetoken', {data: this.GetQueryString()})
     $.ajax({
-      url: 'http://zscg.enderqiu.cn/api/user/profiles',
+      url: 'https://zscg.enderqiu.cn/api/user/profiles',
       type: 'GET',
 
       headers: {

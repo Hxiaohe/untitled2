@@ -4,7 +4,7 @@
 module.exports = {
   'default e2e tests': function (browser) {
     // automatically uses dev Server port from /config.index.js
-    // default: http://zscg.enderqiu.cn
+    // default: https://zscg.enderqiu.cn
     // see nightwatch.conf.js
     const devServer = browser.globals.devServerURL
 

@@ -40,7 +40,7 @@ export default {
     },
     gettrycarlist: function () {
       $.ajax({
-        url: 'http://zscg.enderqiu.cn/api/reservation/',
+        url: 'https://zscg.enderqiu.cn/api/reservation/',
         type: 'GET',
 
         headers: {

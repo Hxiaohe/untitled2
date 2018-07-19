@@ -46,7 +46,7 @@ export default {
     },
     getallcar: function () {
       $.ajax({
-        url: 'http://zscg.enderqiu.cn/api/car/order',
+        url: 'https://zscg.enderqiu.cn/api/car/order',
         type: 'GET',
 
         headers: {
