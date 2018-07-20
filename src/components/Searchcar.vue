@@ -121,7 +121,7 @@ export default {
   methods: {
     get5wdowm: function () {
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/car/shelf?lPrice=1&hPrice=50000',
+        url: 'http://localhost:8080/api/car/shelf?lPrice=1&hPrice=50000',
         type: 'GET',
 
         headers: {
@@ -142,7 +142,7 @@ export default {
     },
     get5to8: function () {
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/car/shelf?lPrice=50000&hPrice=80000',
+        url: 'http://localhost:8080/api/car/shelf?lPrice=50000&hPrice=80000',
         type: 'GET',
 
         headers: {
@@ -163,7 +163,7 @@ export default {
     },
     get10to15: function () {
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/car/shelf?lPrice=100000&hPrice=150000',
+        url: 'http://localhost:8080/api/car/shelf?lPrice=100000&hPrice=150000',
         type: 'GET',
 
         headers: {
@@ -184,7 +184,7 @@ export default {
     },
     getSUV: function () {
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/car/shelf?grade=SUV&lPrice=1&hPrice=10000000',
+        url: 'http://localhost:8080/api/car/shelf?grade=SUV&lPrice=1&hPrice=10000000',
         type: 'GET',
 
         headers: {
@@ -205,7 +205,7 @@ export default {
     },
     getjc: function () {
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/car/shelf?grade=紧凑型&lPrice=1&hPrice=10000000',
+        url: 'http://localhost:8080/api/car/shelf?grade=紧凑型&lPrice=1&hPrice=10000000',
         type: 'GET',
 
         headers: {
@@ -226,7 +226,7 @@ export default {
     },
     getzd: function () {
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/car/shelf?gearbox=自动&lPrice=1&hPrice=10000000',
+        url: 'http://localhost:8080/api/car/shelf?gearbox=自动&lPrice=1&hPrice=10000000',
         type: 'GET',
 
         headers: {
@@ -257,7 +257,7 @@ export default {
       //   type: 'GET',
       //   dataType: 'json',
       //
-      //   url: 'https://zscg.enderqiu.cn/api/api/car/search?brand=劳斯莱斯&lPrice=10.0&hPrice=700.0',
+      //   url: 'http://localhost:8080/api/api/car/search?brand=劳斯莱斯&lPrice=10.0&hPrice=700.0',
       //   cache: true,
       //   success: (data) => {
       //     this.$store.commit('writecarlist', {data: data})
@@ -266,7 +266,7 @@ export default {
       //   }
       // })
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/car/shelf',
+        url: 'http://localhost:8080/api/car/shelf',
         type: 'GET',
 
         headers: {

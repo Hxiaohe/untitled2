@@ -1,29 +1,19 @@
 <template>
 <div class="submitresult">
-  <link rel="stylesheet" href="/static/CSS/submitresult.css">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="renderer" content="webkit">
-  <br>
-  <br>
-  <br>
-  <div class="tickicon" >
-    <img src="/static/img/tickicon.png" alt="icon">
-  </div>
-  <br>
-  <br>
-  <div class="resultinfo">您的信息已经成功提交。管理员会尽快审核您的信息，请您耐心等待。</div>
-  <br>
-
-  <form class="info" role="form" action="">
-    <div class="form-group" id="button">
-      <button type="submit" class="btn btn-default" v-on:click.prevent="tosellercenter">确 &nbsp; &nbsp; &nbsp;认</button>
-      <br>
-      <br>
+  <link rel="stylesheet" href="/static/CSS/SubmitResult.css">
+  <div class="template">
+    <div class="layer2">
+      <div class="left">
+        <img src="/static/img/确认.png" alt="" id="img">
+      </div>
+      <div class="right">
+        您的信息已成功提交，管理员会尽快审核你们的信息，请耐心等待。
+      </div>
     </div>
-  </form>
-  <br>
-  <br>
-  <br>
+    <div class="layer" align="center">
+      <input type="submit" value="确认" id="submit" v-on:click="tosellercenter">
+    </div>
+  </div>
 </div>
 </template>
 

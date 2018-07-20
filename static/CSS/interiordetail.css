@@ -59,14 +59,15 @@
     bottom: 0;
 }
 #button1{
-    border-radius: 2px;
-    background: #007dff;
-    color: white;
-    font-size: 20px;
-    width: 26%;
-    height: 100%;
-    float: left;
-    border: rgba(108,108,108,0.7) 0 solid;
+  border-radius: 2px;
+  background: url(/static/img/客服.jpg) center center no-repeat;
+  /*background: #007dff;*/
+  color: white;
+  font-size: 20px;
+  width: 40%;
+  height: 100%;
+  float: left;
+  border: rgba(108,108,108,0.7) 0 solid;
 }
 #button2{
     color: white;
@@ -77,18 +78,19 @@
     border-bottom: #ffffff 0 solid;
     border-top:  white 0 solid;
     font-size: 20px;
-    width: 37%;
+    width: 0%;
     float: left;
     height: 100%;
 }
 #button3{
-    border-radius: 2px;
-    background: #007dff;
-    color: white;
-    border: rgba(108,108,108,0.7) 0 solid;
-    font-size: 20px;
-    width: 34%;
-    float: left;
-    height: 100%;
+  background: url(/static/img/buyNow.jpg) center center no-repeat;
+  border-radius: 2px;
+  /*background: #007dff;*/
+  color: white;
+  border: rgba(108,108,108,0.7) 0 solid;
+  font-size: 20px;
+  width: 58%;
+  float: left;
+  height: 100%;
 }
 

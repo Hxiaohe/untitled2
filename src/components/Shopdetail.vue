@@ -9,7 +9,7 @@
           店铺名称
         </div>
         <div class="right">
-          <input type="text" name="" class="input1">
+          <input type="text" name="" class="input1" id="shopname">
         </div>
       </div>
 
@@ -98,7 +98,7 @@ export default {
   methods: {
     shopdetail: function () {
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/user/profile',
+        url: 'http://localhost:8080/api/user/profile',
         type: 'POST',
 
         headers: {
@@ -125,7 +125,7 @@ export default {
       formData.append('avatar', $('#bgimageurl')[0].files[0])
 
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/user/avatar',
+        url: 'http://localhost:8080/api/user/avatar',
         type: 'POST',
         cache: false,
 
@@ -143,7 +143,7 @@ export default {
       formData.append('license', $('#imageurl')[0].files[0])
 
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/user/license',
+        url: 'http://localhost:8080/api/user/license',
         type: 'POST',
         cache: false,
 
