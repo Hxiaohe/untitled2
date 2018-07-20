@@ -4,10 +4,16 @@
 .navbar{
     min-height: 3px;
 }
-
+.thumbnail a>img,
+.thumbnail>img{
+  width: 150px;
+  height: 150px;
+  margin-right: auto;
+  margin-left: auto;
+}
 .head{
     width: 100%;
-    height: auto;
+    height: 200px;
 }
 
 h3{
