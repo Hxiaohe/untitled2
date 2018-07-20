@@ -1,7 +1,8 @@
 <template>
 <div class="shopindex">
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">-->
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/static/CSS/youlike.css">
   <link rel="stylesheet" href="/static/CSS/shopindex.css"><div class="head">
