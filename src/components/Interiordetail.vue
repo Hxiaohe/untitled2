@@ -16,14 +16,13 @@
       </div>
       <div class="line1"></div>
       <div class="layer">
-        车辆详情
+        内饰详情
       </div>
       <div class="layer2 text3">
       </div>
       <div class="footer">
-        <input type="button" id="button1" value="客服">
-        <input type="button" id="button2" value=" ">
-        <div v-on:click.prevent="buyinterior"><input type="button" id="button3" value="立即购买"></div>
+        <input type="button" id="button1" >
+        <a v-on:click.prevent="buyinterior"><input type="button" id="button3"></a>
       </div>
     </div>
   </div>
