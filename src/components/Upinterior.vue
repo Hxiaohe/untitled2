@@ -106,7 +106,7 @@ export default {
   methods: {
     upinterior: function () {
       $.ajax({
-        url: 'http://localhost:8080/api/interior/shelf',
+        url: 'https://zscg.enderqiu.cn/api/interior/shelf',
         type: 'POST',
 
         headers: {
@@ -133,7 +133,7 @@ export default {
       formData.append('interiorImage', $('#interiorImage')[0].files[0])
 
       $.ajax({
-        url: 'http://localhost:8080/api/interior/image',
+        url: 'https://zscg.enderqiu.cn/api/interior/image',
         type: 'POST',
         cache: false,
 

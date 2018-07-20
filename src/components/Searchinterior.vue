@@ -36,7 +36,7 @@ export default {
   methods: {
     carMat: function () {
       $.ajax({
-        url: 'http://localhost:8080/api/interior/search?Type=座垫',
+        url: 'https://zscg.enderqiu.cn/api/interior/search?Type=座垫',
         type: 'GET',
 
         headers: {
@@ -53,7 +53,7 @@ export default {
     },
     carPendant: function () {
       $.ajax({
-        url: 'http://localhost:8080/api/interior/search?Type=汽车挂件',
+        url: 'https://zscg.enderqiu.cn/api/interior/search?Type=汽车挂件',
         type: 'GET',
 
         headers: {
@@ -71,7 +71,7 @@ export default {
     },
     wheelCover: function () {
       $.ajax({
-        url: 'http://localhost:8080/api/interior/search?Type=方向盘套',
+        url: 'https://zscg.enderqiu.cn/api/interior/search?Type=方向盘套',
         type: 'GET',
 
         headers: {
@@ -89,7 +89,7 @@ export default {
     },
     others: function () {
       $.ajax({
-        url: 'http://localhost:8080/api/interior/search?Type=其他',
+        url: 'https://zscg.enderqiu.cn/api/interior/search?Type=其他',
         type: 'GET',
 
         headers: {
