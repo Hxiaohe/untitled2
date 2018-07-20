@@ -13,7 +13,6 @@
     <div class="layer1" id="storeName">
       {{this.$store.state.shoplist[GetQueryString()]['storeName']}}
     </div>
-  </div>
 
   <ul id="myTab" class="nav nav-tabs">
     <li class="col-xs-4 active "><a href="#attention" data-toggle="tab">
@@ -50,6 +49,7 @@
 
       </ul>
     </div></nav>
+</div>
 </div>
 </template>
 
