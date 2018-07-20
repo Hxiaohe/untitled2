@@ -23,7 +23,8 @@
     <li class="col-xs-4"><a href="#sales" data-toggle="tab">销售高</a></li>
     <li class="col-xs-4">
       <a href="#inprice" data-toggle="tab">价格</a>
-    </li></ul>
+    </li>
+  </ul>
 
   <div id="section1">
     <div class="grid" id="grid">
