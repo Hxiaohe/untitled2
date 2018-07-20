@@ -10,11 +10,10 @@
       <ul class="list-group">
         <li class="list-group-item car-list">
           <div class="carPic">
-            <img src="" class="pic"/>
+            <img src="this.$store.carlist[GetQueryString()]['carImageUrl']" class="pic"/>
           </div>
           <div class="describe">
-            <p>{{this.$store.state.carlist[GetQueryString()]['category']}} {{this.$store.state.carlist[GetQueryString()]['gearbox']}} {{this.$store.state.carlist[GetQueryString()]['engine']}}</p>
-            <span>{{this.$store.state.carlist[GetQueryString()]['category']}} </span><br/>
+            <p>{{this.$store.state.carlist[GetQueryString()]['category']}}<br/>{{this.$store.state.carlist[GetQueryString()]['gearbox']}} {{this.$store.state.carlist[GetQueryString()]['engine']}}</p>
             <label>{{this.$store.state.carlist[GetQueryString()]['price']}}</label>
           </div>
         </li>

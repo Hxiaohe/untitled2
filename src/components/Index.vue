@@ -1,29 +1,19 @@
 <template>
     <div class="index">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="renderer" content="webkit">
-      <link href="/static/CSS/upnewresult.css" rel="stylesheet">
-      <p class="text-center"  style="margin-left:25%">注：用户类型不可更改，请谨慎选择。</p>
-      <form class="info" role="form" action="">
-        <div class="form-group" id="button">
-          <button type="submit" class="btn btn-default" v-on:click.prevent="sellerCenter" Style="color:white ;background-color: darkorange">
-            我要成为卖家</button>
-          <br>
-          <br>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="/static/CSS/SelectType.css" rel="stylesheet">
+      <div class="template">
+        <div class="layer text">
+          注：用户类型不可更改，请用户认真选择
         </div>
-      </form>
-      <br>
-      <br>
-      <br>
-      <form class="info" role="form" action="">
-        <div class="form-group" id="button2">
-          <button type="submit" class="btn btn-default" v-on:click.prevent="buyerCenter" Style="color:white ;background-color: darkorange">
-            我要成为买家</button>
-          <br>
-          <br>
+        <div class="layer" align="center">
+          <input type="button" class="button" value="我要成为买家" v-on:click.prevent="buyerCenter">
         </div>
-        <input id="token" type="hidden" v-bind:value="GetQueryString()">
-      </form>
+        <div class="layer" align="center">
+          <input type="button" class="button" value="我要成为卖家" v-on:click.prevent="sellerCenter">
+        </div>
+      </div>
+      <input id="token" type="hidden" v-bind:value="GetQueryString()">
     </div>
 </template>
 
@@ -45,7 +35,6 @@ export default {
       $.ajax({
         url: 'http://localhost:8080/api/user/type?userType=seller',
         type: 'PUT',
-
         headers: {
           'Authorization': $('#token').val()
         },
@@ -59,7 +48,6 @@ export default {
       $.ajax({
         url: 'http://localhost:8080/api/user/type?userType=buyer',
         type: 'PUT',
-
         headers: {
           'Authorization': $('#token').val()
         },
