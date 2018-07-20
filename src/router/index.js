@@ -39,6 +39,7 @@ import Buyfix from '@/components/Buyfix'
 import Buyinterior from '@/components/Buyinterior'
 import Zhuanpang from '@/components/Zhuanpang'
 import Interiorhandle from '@/components/Interiorhandle'
+import Interiorpayresult from '@/components/Interiorpayresult'
 // import Shoppingcart from '@/components/Shoppingcart'
 Vue.use(Router)
 
@@ -238,6 +239,11 @@ export default new Router({
       path: '/interiorhandle',
       name: 'Interiorhandle',
       component: Interiorhandle
+    },
+    {
+      path: '/interiorpayresult',
+      name: 'Interiorpayresult',
+      component: Interiorpayresult
     }
     // },
     // {

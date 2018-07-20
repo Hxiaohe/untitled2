@@ -23,13 +23,15 @@
       <div class="footer">
         <input type="button" id="button1" value="客服">
         <input type="button" id="button2" value=" ">
-        <a href="#/payresult"><input type="button" id="button3" value="立即购买"></a>
+        <div v-on:click.prevent="buyinterior"><input type="button" id="button3" value="立即购买"></div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import store from '../store'
+var $ = require('jquery')
 export default {
   name: 'Interiordetail',
   methods: {
@@ -37,6 +39,23 @@ export default {
       var r = this.$route.fullPath.split('=')[1]
       if (r != null) return (r); return null
     }
+  },
+  buycar: function () {
+    $.ajax({
+      url: 'http://localhost:8080/api/interior/order',
+      type: 'POST',
+
+      headers: {
+        'Authorization': store.state.token
+      },
+      data: {
+        'amount': 1,
+        'interiorId': this.$store.state.interiorlist[this.GetQueryString()]['interiorId']
+      },
+      success: function (data) {
+        window.location.href = '#/interiorpayresult'
+      }
+    })
   }
 }
 </script>
