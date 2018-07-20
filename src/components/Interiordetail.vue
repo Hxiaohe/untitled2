@@ -42,7 +42,7 @@ export default {
   },
   buycar: function () {
     $.ajax({
-      url: 'http://localhost:8080/api/interior/order',
+      url: 'https://zscg.enderqiu.cn/api/interior/order',
       type: 'POST',
 
       headers: {
