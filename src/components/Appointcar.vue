@@ -63,7 +63,7 @@ export default {
     },
     appointcar: function () {
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/reservation/',
+        url: 'http://localhost:8080/api/reservation/',
         type: 'POST',
 
         headers: {

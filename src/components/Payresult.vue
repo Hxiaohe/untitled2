@@ -20,7 +20,7 @@
     </div>
     <div id="bottom">
       <div id="submit">
-        <button class="btn btn-default myBtn"><a href="#/buyercenter">查看订单</a></button>
+        <button class="btn btn-default myBtn"><a href="#/carorderhandle">查看订单</a></button>
       </div>
       <div id="words">
         <p>下单后，给您发送链接办理退款的都是骗子！

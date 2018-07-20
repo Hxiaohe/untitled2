@@ -40,7 +40,7 @@ export default {
     },
     getfixlist: function () {
       $.ajax({
-        url: 'https://zscg.enderqiu.cn/api/maintenance/order',
+        url: 'http://localhost:8080/api/maintenance/order',
         type: 'GET',
 
         headers: {
