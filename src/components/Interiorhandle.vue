@@ -1,15 +1,17 @@
 <template>
-  <div class="fixhandle">
+  <div class="interiorhandle">
     <link rel="stylesheet" type="text/css" href="/static/CSS/appointhandle.css">
     <div v-for="(carorder,index) in this.$store.state.carorderlist" :key="index">
       <form class="form-horizontal" role="form" action="">
         <div>
-          车型：<label class="type">{{carorder['category']}}</label>
+          名字：<label class="type">{{carorder['name']}}</label>
+          <br>
+          类型：<label class="type">{{carorder['type']}}</label>
           <br>
           价格：<label class="need">{{carorder['price']}}</label>
           <br>
-          预约人：<label class="contact">{{carorder['userName']}}</label></div>
-        </form>
+          预约人：<label class="contact">{{carorder['buyerName']}}</label></div>
+      </form>
       <br>
       <hr>
     </div>
@@ -20,7 +22,7 @@
 import store from '../store'
 var $ = require('jquery')
 export default {
-  name: 'carorderhandle',
+  name: 'Interiorhandle',
   data () {
     return {
     }
@@ -38,7 +40,7 @@ export default {
     },
     getfixlist: function () {
       $.ajax({
-        url: 'http://localhost:8080/api/car/order',
+        url: 'http://localhost:8080/api/interior/order',
         type: 'GET',
 
         headers: {

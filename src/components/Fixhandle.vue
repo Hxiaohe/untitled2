@@ -12,8 +12,8 @@
         <div class="text1"> 需求说明：{{fix['description']}}</div>
       </div>
       <div class="right">
-        <button type="submit" class="btn btn-default" v-if="fix['status']=='unapplied'" v-on:click.prevent="fixhandle(index)">确认处理</button>
-        <label  class="result" v-if="fix['status']!='unapplied'">已处理</label>
+        <button type="submit" class="btn btn-default submit1" v-if="fix['status']=='unapplied'" v-on:click.prevent="fixhandle(index)">确认处理</button>
+        <label  class="result text2" v-if="fix['status']!='unapplied'">已处理</label>
       </div>
     </div>
     <div class="line1"></div>

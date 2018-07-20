@@ -25,7 +25,7 @@
       <div class="footer">
         <input type="button" id="button1" >
         <a v-bind:href="this.$store.state.carlist[GetQueryString()]['appointurl']"><input type="button" id="button2" ></a>
-        <a href="#/payresult"><input type="button" id="button3" ></a>
+        <a href="#/payresult"><input type="button" id="button3"></a>
       </div>
     </div>
   </div>

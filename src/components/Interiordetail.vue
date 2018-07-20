@@ -23,7 +23,7 @@
       <div class="footer">
         <input type="button" id="button1" value="客服">
         <input type="button" id="button2" value=" ">
-        <a v-bind:href="this.$store.state.interiorlist[GetQueryString()]['buyurl']"><input type="button" id="button3" value="立即购买"></a>
+        <a href="#/payresult"><input type="button" id="button3" value="立即购买"></a>
       </div>
     </div>
   </div>

@@ -9,86 +9,97 @@
         {{this.$store.state.user['storeName']}}
       </div>
       <div class="line1"></div>
+      <a href="#/allcar">
       <div class="layer" >
         <div class="left">
           全部车辆
         </div>
-        <a href="#/allcar" class="right">
+        <div class="right">
           查看全部车辆>
-        </a>
+        </div>
       </div>
+      </a>
       <div class="line2"></div>
+      <a href="#/interiorhandle">
       <div class="layer" >
         <div class="left">
           汽车内饰
         </div>
-        <button class="right">
+        <div class="right">
           查看全部>
-        </button>
+        </div>
       </div>
+      </a>
       <div class="line1"></div>
       <div class="layer" >
         <div class="left">
           粉丝数量
         </div>
         <button class="right">
-          9999
+          104
         </button>
       </div>
       <div class="line1"></div>
+      <a  href="#/carorderhandle">
       <div class="layer" >
         <div class="left">
           购车订单
         </div>
-        <a href="#/carorderhandle" class="right">
+        <div class="right">
           查看全部>
-        </a>
+        </div>
       </div>
+      </a>
       <div class="line2"></div>
+      <a  href="#/fixhandle">
       <div class="layer" >
         <div class="left">
           保养/预约维修信息
         </div>
-        <a href="#/fixhandle" class="right">
+        <div class="right">
           >
-        </a>
-      </div>
+        </div>
+      </div></a>
       <div class="line1"></div>
+      <a  href="#/trycarhandle">
       <div class="layer" >
         <div class="left">
           预约试车信息
         </div>
-        <a href="#/trycarhandle" class="right">
+        <div class="right">
           >
-        </a>
-      </div>
+        </div>
+      </div></a>
       <div class="line1"></div>
+      <a href="/#/upcar">
       <div class="layer" >
         <div class="left">
           车辆上新
         </div>
-        <a href="/#/upcar" class="right">
+        <div class="right">
           >
-        </a>
-      </div>
+        </div>
+      </div></a>
       <div class="line1"></div>
+      <a  href="/#/upinterior">
       <div class="layer" >
         <div class="left">
           汽车内饰上新
         </div>
-        <a href="/#/upinterior" class="right">
+        <div class="right">
           >
-        </a>
-      </div>
+        </div>
+      </div></a>
       <div class="line1"></div>
+      <a  href="#/shopdetail">
       <div class="layer" >
         <div class="left">
           信息验证
         </div>
-        <a href="#/shopdetail" class="right">
+        <div class="right">
           >
-        </a>
-      </div>
+        </div>
+      </div></a>
       <div class="layer" >
         <div class="text">
           注：经后台人员审核通过，您才能上架商品

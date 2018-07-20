@@ -11,8 +11,8 @@
         <div class="text1"> 申请人：{{trycar['buyerId']}}</div>
       </div>
       <div class="right">
-        <button type="submit" class="btn btn-default" v-if="trycar['state']=='unapplied'" v-on:click.prevent="trycarhandle(index)">确认处理</button>
-        <label  class="result" v-if="trycar['state']!='unapplied'">已处理</label>
+        <button type="submit" class="btn btn-default submit1" v-if="trycar['state']=='unapplied'" v-on:click.prevent="trycarhandle(index)">确认处理</button>
+        <label  class="result text2" v-if="trycar['state']!='unapplied'">已处理</label>
       </div>
     </div>
     <div class="line1"></div>
