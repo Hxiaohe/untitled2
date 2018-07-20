@@ -5,17 +5,15 @@
   <!--<meta name="viewport" content="width=device-width,initial-scale=1.0">-->
   <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/static/CSS/youlike.css">
-  <link rel="stylesheet" href="/static/CSS/shopindex.css"><div class="head">
-  <br>
-  <br>
-  <br>
-  <div class="jumbotron text-center">
-    <img v-bind:src="this.$store.state.shoplist[GetQueryString()]['userAvatarUrl']" alt="店铺图片"/>
+  <link rel="stylesheet" href="/static/CSS/shopindex.css">
+  <div class="template">
+  <div class="header" id="">
+      <img v-bind:src="this.$store.state.shoplist[GetQueryString()]['userAvatarUrl']" id="SM_img1" >
+    </div>
+    <div class="layer1" id="storeName">
+      {{this.$store.state.shoplist[GetQueryString()]['storeName']}}
+    </div>
   </div>
-  <h3>{{this.$store.state.shoplist[GetQueryString()]['storeName']}}</h3>
-  <div class="label" >
-    <label id="num">856</label><label>粉丝</label></div>
-</div>
 
   <ul id="myTab" class="nav nav-tabs">
     <li class="col-xs-4 active "><a href="#attention" data-toggle="tab">
@@ -42,7 +40,6 @@
         </div>
       </div>
     </div>
-
   </div>
   <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation" >
     <div>
