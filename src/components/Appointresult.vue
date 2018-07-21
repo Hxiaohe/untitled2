@@ -1,6 +1,6 @@
 <template>
   <div class="appointresult">
-    <link rel="stylesheet" href="/static/CSS/submitresult.css">
+    <link rel="stylesheet" href="/static/CSS/SubmitResult.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="renderer" content="webkit">
     <div class="template">
